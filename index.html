@@ -1,0 +1,1440 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strategisches Marketing – Vertiefung</title>
+<meta name="description" content="Interaktive Vertiefung für die Sekundarstufe II: Strategisches vs. operatives Marketing, Marktforschung, Marktanalyse, SWOT- und Portfolioanalyse, Marketingstrategien und Fallstudie MOVE Motion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F1EA; --surface:#FFFFFF; --surface-2:#EDE7DC; --ink:#1B1A1F; --muted:#5D5866; --line:#D9D1C3;
+  --red:#D7261E; --red-soft:#FBE3DF; --yellow:#FFD23F; --yellow-soft:#FFF4CC;
+  --teal:#176B73; --teal-soft:#DDF0EF; --green:#2E7D32; --green-soft:#E3F2E1; --violet:#5B3FA8; --violet-soft:#ECE6FA;
+  --shadow:0 1px 2px rgba(27,26,31,.06),0 6px 20px rgba(27,26,31,.07);
+  --radius:14px; --font-head:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#141318; --surface:#1E1D24; --surface-2:#2A2832; --ink:#EEEAF3; --muted:#A9A3B4; --line:#3A3744;
+    --red:#FF5A4E; --red-soft:#3A1F1E; --yellow:#FFD23F; --yellow-soft:#3A3318;
+    --teal:#5BC3C9; --teal-soft:#16302F; --green:#7CCB80; --green-soft:#1B2E1C; --violet:#A893F0; --violet-soft:#29233F;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141318; --surface:#1E1D24; --surface-2:#2A2832; --ink:#EEEAF3; --muted:#A9A3B4; --line:#3A3744;
+  --red:#FF5A4E; --red-soft:#3A1F1E; --yellow:#FFD23F; --yellow-soft:#3A3318;
+  --teal:#5BC3C9; --teal-soft:#16302F; --green:#7CCB80; --green-soft:#1B2E1C; --violet:#A893F0; --violet-soft:#29233F;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35); color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:900}
+h3{font-size:1.35rem;font-weight:800;margin-top:1.8em}
+h4{font-size:1.05rem;font-weight:700}
+p{margin:0 0 1em}
+a{color:var(--teal)}
+button{font:inherit;cursor:pointer}
+input,select,textarea{font:inherit;color:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- Header ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--font-head);font-weight:900;font-size:1.15rem;white-space:nowrap}
+.brand-tag{display:inline-block;background:var(--red);color:#fff;padding:2px 10px 2px 14px;border-radius:4px 10px 10px 4px;position:relative;transform:rotate(-3deg)}
+.brand-tag:before{content:"";position:absolute;left:5px;top:50%;width:5px;height:5px;margin-top:-2.5px;border-radius:50%;background:var(--paper)}
+.brand small{font-weight:600;color:var(--muted);font-family:var(--font-body);font-size:.85rem}
+.progress-wrap{flex:1;display:flex;align-items:center;gap:10px;min-width:0}
+.progress{flex:1;height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+.progress>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--green));transition:width .5s}
+.progress-label{font-size:.85rem;color:var(--muted);white-space:nowrap}
+.icon-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:6px 10px;font-size:.9rem}
+.menu-btn{display:none}
+
+/* ---------- Layout ---------- */
+.layout{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:280px minmax(0,1fr);gap:32px;padding:0 16px}
+.sidebar{position:sticky;top:64px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:22px 0 30px}
+.sidebar ol{list-style:none;margin:0;padding:0}
+.sidebar a{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border-radius:10px;text-decoration:none;color:var(--ink);font-size:.97rem;line-height:1.3}
+.sidebar a:hover{background:var(--surface-2)}
+.sidebar a.active{background:var(--surface);box-shadow:var(--shadow)}
+.sidebar .num{font-family:var(--font-head);font-weight:900;color:var(--red);min-width:22px}
+.sidebar .meta{display:block;font-size:.78rem;color:var(--muted);margin-top:2px}
+.sidebar .chk{margin-left:auto;font-size:.8rem;color:var(--green);font-weight:700}
+.side-group{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:16px 12px 6px;font-weight:700}
+main{padding:28px 0 80px;min-width:0}
+.chapter{display:none;max-width:960px}
+.chapter.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-weight:800;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.lead{font-size:1.18rem;color:var(--muted);max-width:60ch}
+
+/* ---------- Boxes ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin:20px 0}
+.card h3:first-child,.card h4:first-child{margin-top:0}
+.box{border-radius:var(--radius);padding:16px 20px;margin:20px 0;border-left:5px solid}
+.box.info{background:var(--teal-soft);border-color:var(--teal)}
+.box.warn{background:var(--red-soft);border-color:var(--red)}
+.box.task{background:var(--yellow-soft);border-color:var(--yellow)}
+.box.merke{background:var(--violet-soft);border-color:var(--violet)}
+.box>strong:first-child,.box .box-title{display:block;font-family:var(--font-head);font-weight:800;margin-bottom:6px}
+.box ol,.box ul{margin:.3em 0 0;padding-left:1.3em}
+.box li{margin:.25em 0}
+.op{font-weight:700;text-transform:uppercase;font-size:.85em;letter-spacing:.04em}
+.ia-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.ia-badge{font-family:var(--font-head);font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:3px 9px;border-radius:6px}
+.ia-head h3{margin:0;font-size:1.2rem}
+.ia-done{margin-left:auto;font-size:.82rem;color:var(--green);font-weight:700;display:none}
+.card.is-done .ia-done{display:inline}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.pill{display:inline-block;padding:2px 10px;border-radius:99px;font-size:.8rem;font-weight:700;background:var(--surface-2);color:var(--muted)}
+.muted{color:var(--muted)}
+.small{font-size:.88rem}
+.center{text-align:center}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:9px 18px;border-radius:10px;font-weight:700;transition:transform .1s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.small{padding:5px 12px;font-size:.9rem}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.opt{border:2px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 14px;border-radius:10px;font-weight:600;text-align:left;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.sel{border-color:var(--ink);background:var(--surface-2)}
+.opt.right{border-color:var(--green);background:var(--green-soft)}
+.opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.opt[disabled]{cursor:default}
+
+/* ---------- Quiz list ---------- */
+.q-item{border-top:1px solid var(--line);padding:16px 0}
+.q-item:first-of-type{border-top:0}
+.q-text{font-weight:600;margin-bottom:10px}
+.q-opts{display:flex;flex-wrap:wrap;gap:8px}
+.q-fb{margin-top:10px;padding:10px 14px;border-radius:10px;font-size:.95rem;display:none}
+.q-fb.show{display:block}
+.q-fb.ok{background:var(--green-soft)}
+.q-fb.no{background:var(--red-soft)}
+.q-fb.neutral{background:var(--teal-soft)}
+.score{font-family:var(--font-head);font-weight:800;font-size:1rem;padding:6px 12px;background:var(--surface-2);border-radius:8px;display:inline-block}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:34px 30px;border-radius:22px;background:var(--ink);color:var(--paper);overflow:hidden;margin-bottom:26px}
+.hero h1{font-size:clamp(2.2rem,6vw,4.2rem);font-weight:900;line-height:1;margin:6px 0 14px;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero p{color:color-mix(in srgb,var(--paper) 80%,transparent);max-width:56ch;font-size:1.12rem}
+.hero .stamp{position:absolute;right:26px;top:22px;border:3px solid var(--red);color:var(--red);font-family:var(--font-head);font-weight:900;padding:6px 14px;border-radius:8px;transform:rotate(8deg);font-size:1.1rem;letter-spacing:.06em;background:color-mix(in srgb,var(--ink) 70%,transparent)}
+:root[data-theme="dark"] .hero, :root:not([data-theme="light"]) .hero{}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.hero-tags span{border:1px solid color-mix(in srgb,var(--paper) 30%,transparent);border-radius:99px;padding:3px 12px;font-size:.85rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero{background:#2A2832;color:#EEEAF3}}
+:root[data-theme="dark"] .hero{background:#2A2832;color:#EEEAF3}
+
+.roadmap{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin:18px 0}
+.road{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.road:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.road b{font-family:var(--font-head);color:var(--red);font-size:1.4rem;display:block}
+.road span{font-weight:700;display:block;line-height:1.25}
+.road small{color:var(--muted);font-size:.82rem}
+
+/* ---------- Chapter nav ---------- */
+.chap-nav{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:2px solid var(--line)}
+.chap-nav a{text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:12px 16px;border-radius:12px;max-width:48%}
+.chap-nav a small{display:block;color:var(--muted);font-size:.8rem}
+.chap-nav a b{font-family:var(--font-head)}
+.chap-nav .next{margin-left:auto;text-align:right}
+
+/* ---------- Marketing flow ---------- */
+.flow{display:grid;gap:10px;margin:18px 0}
+.flow-step{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:stretch}
+.flow-label{font-family:var(--font-head);font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:10px;padding:10px;color:#fff}
+.flow-body{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.flow-body b{font-family:var(--font-head)}
+.mix{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.mix div{background:var(--teal-soft);border-radius:8px;padding:10px;font-size:.92rem}
+.mix div b{display:block;font-family:var(--font-head);color:var(--teal);hyphens:auto;overflow-wrap:anywhere}
+.mix div.hl{background:var(--red-soft)}
+.mix div.hl b{color:var(--red)}
+
+/* ---------- Four-question check ---------- */
+.check4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0}
+.check4 div{background:var(--surface);border:2px solid var(--ink);border-radius:12px;padding:14px;position:relative}
+.check4 div b{font-family:var(--font-head);font-size:1.6rem;color:var(--red);display:block;line-height:1}
+.check4 div strong{display:block;font-family:var(--font-head);margin:6px 0 4px}
+.check4 div span{font-size:.9rem;color:var(--muted)}
+
+/* ---------- Selbsttest ---------- */
+.st-wrap{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.st-step{font-size:.85rem;color:var(--muted);font-weight:700}
+.st-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:14px 0}
+.prod{position:relative;border:2px solid var(--line);border-radius:14px;padding:16px 14px 14px;background:var(--surface);text-align:left;color:var(--ink);transition:border-color .15s,transform .15s}
+.prod:hover{border-color:var(--ink);transform:translateY(-2px)}
+.prod.sel{border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-soft)}
+.prod .p-name{font-weight:700;display:block;margin-top:4px}
+.prod .p-spec{font-size:.88rem;color:var(--muted);display:block}
+.prod .p-price{font-family:var(--font-head);font-weight:900;font-size:1.4rem;display:block;margin-top:6px}
+.prod .p-badge{position:absolute;top:-11px;left:12px;background:var(--red);color:#fff;font-size:.75rem;font-weight:800;padding:2px 9px;border-radius:6px;letter-spacing:.03em}
+.prod .p-radio{position:absolute;right:12px;top:14px;width:20px;height:20px;border-radius:50%;border:2px solid var(--line)}
+.prod.sel .p-radio{border-color:var(--teal);background:radial-gradient(circle,var(--teal) 45%,transparent 50%)}
+.prod .p-art{height:58px;display:flex;align-items:center;justify-content:flex-start}
+.reveal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.reveal-col{border-radius:12px;padding:12px;border:2px dashed var(--line)}
+.reveal-col.mine{border:2px solid var(--teal);background:var(--teal-soft)}
+.reveal-col h4{margin-bottom:8px}
+.mini-prod{display:flex;justify-content:space-between;gap:8px;font-size:.92rem;padding:6px 8px;border-radius:8px;background:var(--surface);margin:4px 0;border:1px solid var(--line)}
+.mini-prod.chosen{outline:2px solid var(--teal)}
+.mini-prod em{font-style:normal;background:var(--red);color:#fff;font-size:.72rem;padding:1px 6px;border-radius:5px;margin-left:6px;font-weight:700}
+
+/* ---------- AIDA poster ---------- */
+.aida-wrap{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:22px;align-items:start}
+.poster{position:relative;aspect-ratio:3/4.2;border-radius:12px;overflow:hidden;background:radial-gradient(circle at 70% 20%,#3a1c71 0%,#0d0b1f 60%);color:#fff;font-family:var(--font-head);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.poster .hs{position:absolute;background:transparent;border:2px dashed transparent;border-radius:8px;color:inherit;padding:0;text-align:inherit;transition:border-color .2s,background .2s}
+.poster .hs:hover,.poster .hs.on{border-color:var(--yellow);background:rgba(255,210,63,.12)}
+.poster .hs .tagno{position:absolute;top:-10px;right:-10px;width:24px;height:24px;border-radius:50%;background:var(--yellow);color:#111;font-size:.8rem;font-weight:900;display:flex;align-items:center;justify-content:center;font-family:var(--font-body)}
+.aida-row{display:grid;grid-template-columns:28px 1fr 150px;gap:10px;align-items:center;padding:8px 10px;border-radius:10px;border:1px solid var(--line);margin-bottom:8px;background:var(--surface)}
+.aida-row.on{border-color:var(--yellow);box-shadow:0 0 0 3px var(--yellow-soft)}
+.aida-row .n{width:26px;height:26px;border-radius:50%;background:var(--yellow);color:#111;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.aida-row select{padding:6px;border-radius:8px;border:1px solid var(--line);background:var(--surface)}
+.aida-row .ex{grid-column:2/4;font-size:.9rem;display:none;padding:8px 10px;border-radius:8px}
+.aida-row.checked .ex{display:block}
+.aida-row.ok .ex{background:var(--green-soft)}
+.aida-row.no .ex{background:var(--red-soft)}
+.aida-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0 18px}
+.aida-steps div{border-radius:10px;padding:10px;color:#fff;font-size:.88rem}
+.aida-steps div b{display:block;font-family:var(--font-head);font-size:1.6rem;line-height:1}
+
+/* ---------- Feed ---------- */
+.feed{display:grid;gap:14px}
+.post{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.post-head{display:flex;align-items:center;gap:10px;padding:10px 14px}
+.avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:.9rem;flex-shrink:0}
+.post-user{font-weight:700;line-height:1.1}
+.post-user small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
+.post-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:3.4rem;position:relative}
+.post-body{padding:10px 14px;font-size:.95rem}
+.post-actions{display:flex;gap:8px;flex-wrap:wrap;padding:0 14px 12px}
+
+/* ---------- Glossar ---------- */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.filters input{flex:1;min-width:180px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface)}
+.flip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.flip{perspective:900px;height:170px;border:0;background:none;padding:0;text-align:left;color:var(--ink)}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip.on .flip-in{transform:rotateY(180deg)}
+.flip-f,.flip-b{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:14px;border:1px solid var(--line);overflow:auto}
+.flip-f{background:var(--surface);display:flex;flex-direction:column;justify-content:space-between}
+.flip-f b{font-family:var(--font-head);font-size:1.15rem}
+.flip-b{background:var(--ink);color:var(--paper);transform:rotateY(180deg);font-size:.86rem;line-height:1.45}
+
+/* ---------- Supermarkt ---------- */
+.market-wrap{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:18px;align-items:start}
+.market svg{width:100%;height:auto;display:block;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+.hot{cursor:pointer}
+.hot circle{fill:var(--red);stroke:var(--surface);stroke-width:3;transition:r .15s}
+.hot text{fill:#fff;font-family:var(--font-head);font-weight:900;font-size:16px;pointer-events:none}
+.hot:hover circle,.hot:focus circle{r:19}
+.hot.found circle{fill:var(--green)}
+.hot.cur circle{fill:var(--yellow)}
+.hot.cur text{fill:#111}
+.hot:focus{outline:none}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);position:sticky;top:80px}
+.panel .pz{font-family:var(--font-head);color:var(--red);font-weight:900}
+.tip{background:var(--teal-soft);border-radius:10px;padding:8px 12px;font-size:.92rem;margin-top:10px}
+.princ{display:inline-block;background:var(--violet-soft);color:var(--violet);font-weight:700;font-size:.8rem;padding:2px 10px;border-radius:99px;margin-top:6px}
+
+/* ---------- Regal ---------- */
+.shelf{background:var(--surface-2);border-radius:12px;padding:10px;border:1px solid var(--line)}
+.shelf-row{display:grid;grid-template-columns:110px repeat(3,minmax(0,1fr));gap:8px;align-items:stretch;padding:8px 0;border-bottom:6px solid #8a6d4a}
+.shelf-row:last-child{border-bottom-width:10px}
+.zone{font-size:.78rem;font-weight:700;color:var(--muted);display:flex;align-items:center;line-height:1.2;opacity:0;transition:opacity .4s}
+.shelf.revealed .zone{opacity:1}
+.box-prod{border:2px solid transparent;border-radius:8px;padding:8px;color:#fff;text-align:left;min-height:84px;display:flex;flex-direction:column;justify-content:space-between;font-size:.85rem;line-height:1.2;transition:transform .15s}
+.box-prod:hover{transform:translateY(-3px)}
+.box-prod b{font-family:var(--font-head);font-size:.95rem}
+.box-prod .gp{display:none;background:rgba(255,255,255,.92);color:#111;border-radius:5px;padding:2px 5px;font-weight:700;font-size:.78rem;margin-top:4px}
+.shelf.revealed .box-prod .gp{display:block}
+.box-prod.picked{border-color:var(--yellow);box-shadow:0 0 0 3px var(--yellow)}
+
+/* ---------- Preisschilder ---------- */
+.tag-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.ptag{background:#fff;color:#111;border-radius:6px 16px 16px 6px;padding:14px 16px 14px 26px;position:relative;border:1px solid #ddd;box-shadow:var(--shadow)}
+.ptag:before{content:"";position:absolute;left:9px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--paper);border:1px solid #ccc}
+.ptag.red{background:#E8261C;color:#fff;border-color:#E8261C}
+.ptag.yel{background:#FFD23F;border-color:#FFD23F}
+.ptag .big{font-family:var(--font-head);font-weight:900;font-size:2rem;line-height:1}
+.ptag s{opacity:.8}
+.ptag .tiny{font-size:.7rem;opacity:.85}
+.calc{display:grid;gap:12px}
+.calc-row{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.calc-row input{width:110px;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2)}
+.calc-row .res{grid-column:1/-1;font-size:.92rem;display:none;padding:8px 10px;border-radius:8px}
+.calc-row.done .res{display:block}
+
+/* ---------- Range & sliders ---------- */
+input[type=range]{width:100%;accent-color:var(--red)}
+.big-num{font-family:var(--font-head);font-weight:900;font-size:2.2rem}
+
+/* ---------- Shop (Dark Patterns) ---------- */
+.shop{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;color:#111;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.4}
+.shop-top{display:flex;justify-content:space-between;align-items:center;background:#111;color:#fff;padding:10px 16px;font-weight:800;letter-spacing:.06em}
+.shop-banner{background:#E8261C;color:#fff;text-align:center;padding:6px;font-weight:700;font-size:14px}
+.shop-main{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px}
+.shoe{background:linear-gradient(135deg,#eef2f7,#dfe6ef);border-radius:12px;display:flex;align-items:center;justify-content:center;min-height:240px;position:relative}
+.dp{position:relative;border-radius:6px;transition:outline-color .15s, background .15s;outline:2px dashed transparent;outline-offset:2px;cursor:pointer}
+.shop.flagmode .dp:hover{outline-color:#999}
+.dp.flagged{outline:3px solid #E8261C !important}
+.dp.missed{outline:3px dashed #f0a000 !important}
+.dp.wrongflag{outline:3px solid #777 !important}
+.dp .flagno{position:absolute;top:-12px;right:-10px;background:#E8261C;color:#fff;font-size:11px;font-weight:800;border-radius:99px;padding:1px 7px;display:none;font-family:Arial}
+.dp.flagged .flagno{display:block}
+.shop .row{margin:8px 0}
+.shop .buy{width:100%;background:#111;color:#fff;border:0;padding:12px;border-radius:10px;font-weight:800;font-size:16px}
+.shop .bnpl{width:100%;background:#FFB3C7;color:#111;border:0;padding:10px;border-radius:10px;font-weight:800;margin-top:8px}
+.shop label{display:flex;gap:8px;align-items:flex-start;font-size:14px}
+.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+.modal-back.show{display:flex}
+.modal{background:#fff;color:#111;border-radius:16px;max-width:420px;width:100%;padding:24px;font-family:Arial,Helvetica,sans-serif;text-align:center}
+.modal .yes{background:#E8261C;color:#fff;border:0;padding:12px 18px;border-radius:10px;font-weight:800;width:100%;font-size:16px}
+.modal .no{background:none;border:0;color:#999;font-size:12px;margin-top:10px;text-decoration:underline}
+.dp-list{display:grid;gap:8px;margin-top:12px}
+.dp-item{border-radius:10px;padding:10px 12px;border:1px solid var(--line);background:var(--surface);font-size:.95rem}
+.dp-item.found{border-color:var(--green);background:var(--green-soft)}
+.dp-item.miss{border-color:#f0a000;background:var(--yellow-soft)}
+
+/* ---------- Matrix ---------- */
+.matrix{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;aspect-ratio:1.5/1;margin:16px 0 30px 34px}
+.mq{border-radius:12px;padding:10px;font-size:.82rem;position:relative}
+.mq h5{margin:0 0 6px;font-family:var(--font-head);font-size:.9rem}
+.mq .dots{display:flex;flex-wrap:wrap;gap:5px}
+.mq .dot{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:2px 6px;font-size:.75rem}
+.ax-x{position:absolute;bottom:-26px;left:0;right:0;display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);font-weight:700}
+.ax-y{position:absolute;left:-34px;top:0;bottom:0;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);font-weight:700}
+
+/* ---------- Sorter ---------- */
+.sort-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.sort-col{border-radius:12px;padding:12px;min-height:80px}
+.sort-col h4{margin:0 0 8px}
+.chip{display:block;background:var(--surface);border:1px solid var(--line);padding:8px 10px;border-radius:8px;margin:6px 0;font-size:.92rem}
+
+/* ---------- Tally ---------- */
+.tally{display:grid;grid-template-columns:1fr auto auto auto;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line)}
+.tally .cnt{font-family:var(--font-head);font-weight:900;min-width:28px;text-align:center}
+.tally button{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:800}
+
+/* ---------- Analyse form ---------- */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-grid label{display:block;font-weight:700;font-size:.92rem}
+.form-grid input,.form-grid textarea,.form-grid select{width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);margin-top:4px}
+.form-grid .full{grid-column:1/-1}
+.checks{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.checks label{font-weight:500;display:inline-flex;gap:6px;align-items:center;background:var(--surface-2);padding:4px 10px;border-radius:99px;font-size:.88rem;cursor:pointer}
+.checks input{width:auto;margin:0}
+
+/* ---------- Burger slider ---------- */
+.ba{position:relative;max-width:520px;margin:0 auto;aspect-ratio:13/8;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.ba svg{position:absolute;inset:0;width:100%;height:100%}
+.ba .lbl{position:absolute;top:10px;font-family:var(--font-head);font-weight:800;font-size:.8rem;padding:3px 9px;border-radius:6px;background:rgba(0,0,0,.65);color:#fff;z-index:3}
+
+/* ---------- Bat-ball ---------- */
+.inline-in{padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);width:120px}
+
+/* ---------- Quiz stepper ---------- */
+.qs-progress{display:flex;gap:4px;margin-bottom:14px}
+.qs-progress i{flex:1;height:6px;border-radius:3px;background:var(--surface-2)}
+.qs-progress i.ok{background:var(--green)}
+.qs-progress i.no{background:var(--red)}
+.qs-progress i.cur{background:var(--ink)}
+
+/* ---------- Teacher ---------- */
+details.teacher{background:var(--surface);border:1px dashed var(--muted);border-radius:12px;padding:12px 16px;margin:20px 0}
+details.teacher summary{cursor:pointer;font-weight:700}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border-bottom:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+th{font-family:var(--font-head)}
+
+/* ---------- Footer ---------- */
+footer{max-width:1280px;margin:0 auto;padding:24px 16px 40px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr;gap:0}
+  .sidebar{position:fixed;top:56px;left:0;bottom:0;width:300px;max-height:none;background:var(--paper);z-index:60;padding:16px;transform:translateX(-105%);transition:transform .25s;border-right:1px solid var(--line);box-shadow:var(--shadow)}
+  .sidebar.open{transform:none}
+  .menu-btn{display:inline-block}
+  .aida-wrap,.market-wrap{grid-template-columns:1fr}
+  .panel{position:static}
+  .progress-label{display:none}
+}
+@media (max-width:720px){
+  body{font-size:17px}
+  .grid2,.grid3,.reveal-grid,.sort-cols,.form-grid{grid-template-columns:1fr}
+  .grid4,.check4,.mix,.aida-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow-step{grid-template-columns:1fr}
+  .shop-main{grid-template-columns:1fr}
+  .shelf-row{grid-template-columns:62px repeat(3,minmax(0,1fr))}
+  .zone{font-size:.66rem}
+  .box-prod{font-size:.74rem;min-height:92px;padding:6px}
+  .box-prod b{font-size:.8rem}
+  .hero{padding:26px 20px}
+  .hero .stamp{display:none}
+  .brand small{display:none}
+  .aida-row{grid-template-columns:28px 1fr}
+  .aida-row select{grid-column:1/-1}
+  .aida-row .ex{grid-column:1/-1}
+  .matrix{aspect-ratio:auto;grid-template-rows:auto auto}
+  .card{padding:16px}
+  .chap-nav a{max-width:100%}
+  .calc-row{grid-template-columns:1fr}
+}
+
+/* ---------- Print ---------- */
+#printArea{display:none}
+@media print{
+  body.printing > *:not(#printArea){display:none !important}
+  body.printing #printArea{display:block !important;color:#000;font-size:12pt}
+  body:not(.printing) .topbar, body:not(.printing) .sidebar, body:not(.printing) .chap-nav{display:none}
+  body:not(.printing) .chapter{display:block !important}
+}
+
+/* ---------- Zusatz: Strategisches Marketing ---------- */
+.swot{display:grid;grid-template-columns:110px minmax(0,1fr) minmax(0,1fr);gap:6px;margin-top:14px}
+.swot>div{min-width:0;hyphens:auto;overflow-wrap:break-word}
+.swot .hd{font-family:var(--font-head);font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px;border-radius:8px;background:var(--surface-2)}
+.swot .cell{border-radius:10px;padding:10px 12px;min-height:90px;font-size:.9rem}
+.swot .cell h5{margin:0 0 6px;font-family:var(--font-head);font-size:.95rem}
+.swot .cell ul{margin:0;padding-left:1.1em}
+.c-s{background:var(--green-soft)} .c-w{background:var(--red-soft)} .c-o{background:var(--teal-soft)} .c-t{background:var(--yellow-soft)}
+.order-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.order-list li{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;background:var(--surface);border:2px solid var(--line);border-radius:10px;padding:8px 10px}
+.order-list li .pos{font-family:var(--font-head);font-weight:900;color:var(--red);text-align:center}
+.order-list li.ok{border-color:var(--green);background:var(--green-soft)}
+.order-list li.no{border-color:var(--red);background:var(--red-soft)}
+.order-list .mv{display:flex;gap:4px}
+.order-list .mv button{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);font-weight:800}
+.gap-text{line-height:2.3}
+.gap-text select{padding:3px 6px;border-radius:8px;border:2px solid var(--line);background:var(--surface);font-weight:600;max-width:100%}
+.gap-text select.ok{border-color:var(--green);background:var(--green-soft)}
+.gap-text select.no{border-color:var(--red);background:var(--red-soft)}
+.bcg-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.bcg-table td,.bcg-table th{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+.bcg-table input{width:80px;padding:6px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2)}
+.bcg-table select{padding:6px;border-radius:8px;border:1px solid var(--line);background:var(--surface)}
+.bcg-table .fb{font-size:.82rem}
+.plot{width:100%;max-width:560px;display:block;margin:16px auto 0}
+.quad-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}
+.quad-legend div{border-radius:12px;padding:12px;font-size:.88rem}
+.quad-legend b{display:block;font-family:var(--font-head);font-size:1rem}
+.sol{display:none;margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--teal-soft);font-size:.9rem}
+.sol.show{display:block}
+.ws-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ws-card{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--surface)}
+.ws-card h4{margin-bottom:6px}
+.ws-card textarea,.swot-edit textarea{width:100%;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);font-size:.92rem;margin-top:4px}
+.swot-edit{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.swot-edit label{display:block;font-weight:700;font-size:.9rem;border-radius:10px;padding:10px}
+.quote{font-family:var(--font-head);font-size:1.25rem;line-height:1.4;border-left:6px solid var(--red);padding:6px 0 6px 18px;margin:16px 0}
+@media (max-width:720px){
+  .swot{grid-template-columns:58px minmax(0,1fr) minmax(0,1fr)}
+  .swot .hd{font-size:.68rem;padding:4px;hyphens:manual;overflow-wrap:anywhere}
+  .swot .hd span{display:none}
+  .swot .cell{font-size:.8rem;padding:8px}
+  .quad-legend,.ws-grid,.swot-edit{grid-template-columns:1fr}
+  .bcg-table thead{display:none}
+  .bcg-table tr{display:block;border-bottom:2px solid var(--line);padding:8px 0}
+  .bcg-table td{display:block;border:0;padding:3px 0}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Kapitelmenü öffnen">☰ Kapitel</button>
+    <a class="brand" href="#k0"><span class="brand-tag">Durchschaut!</span><small>Strategisches Marketing</small></a>
+    <div class="progress-wrap" title="Dein Fortschritt: erledigte Übungen">
+      <div class="progress"><i id="progBar"></i></div>
+      <span class="progress-label" id="progLabel">0 von 0 Übungen</span>
+    </div>
+    <button class="icon-btn" id="themeBtn" aria-label="Hell/Dunkel umschalten" title="Hell/Dunkel">🌓</button>
+  </div>
+</header>
+
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="Kapitel">
+  <div id="navList"></div>
+  <div style="padding:16px 12px;display:grid;gap:10px;justify-items:start">
+    <a class="btn ghost small" href="Wie_funktioniert_Werbung.html" style="text-decoration:none">← Zur Plattform „Wie funktioniert Werbung?“</a>
+    <button class="btn ghost small" id="resetBtn">Fortschritt zurücksetzen</button>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ================= K0 ================= -->
+<section class="chapter" id="k0" data-title="Start: Mit Plan zum Erfolg" data-meta="Einstieg Aldi Süd" data-group="Einstieg">
+  <div class="hero">
+    <div class="stamp">MIT PLAN!</div>
+    <div class="kicker" style="color:var(--yellow)">Vertiefung · Wirtschaft &amp; Recht · Sek. II</div>
+    <h1>Strategisches <em>Marketing</em></h1>
+    <p>Warum sind manche Kampagnen erfolgreich und andere verpuffen? Hinter jeder erfolgreichen Werbung steht eine langfristige Strategie. Und jede gute Strategie beruht auf Daten und Analysen. Hier festigst du, wie Unternehmen dabei vorgehen.</p>
+    <div class="hero-tags"><span>9 Kapitel</span><span>25+ Übungen</span><span>Fallstudie MOVE Motion</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card" style="margin:0">
+      <h4>Das kannst du am Ende</h4>
+      <ul class="small" style="margin:0;padding-left:1.2em">
+        <li>strategisches Marketing <b>definieren</b> und vom operativen Marketing <b>abgrenzen</b>,</li>
+        <li>Vorgehen und Ziele von <b>Marktforschung, Marktanalyse, SWOT- und Portfolioanalyse</b> erläutern,</li>
+        <li>die Analysetools auf das Fallbeispiel <b>MOVE Motion</b> anwenden,</li>
+        <li>die Bedeutung des strategischen Marketings für den Unternehmenserfolg <b>beurteilen</b>.</li>
+      </ul>
+    </div>
+    <div class="card" style="margin:0">
+      <h4>So arbeitest du</h4>
+      <p class="small" style="margin:0">Arbeite die Kapitel der Reihe nach durch. Jede Übung gibt dir sofort eine Rückmeldung. Dein Fortschritt wird oben angezeigt und lokal im Browser gespeichert. Im letzten Kapitel kannst du das Arbeitsblatt „Analysetools“ ausfüllen und ausdrucken. Grundlagen zum Marketing-Mix findest du in Kapitel 1 der Plattform <a href="Wie_funktioniert_Werbung.html#k1">„Wie funktioniert Werbung?“</a>.</p>
+    </div>
+  </div>
+
+  <h3>Einstieg: „Nur Nur Natur“, Aldi Süds neue Marketingstrategie</h3>
+  <div class="box info">
+    <strong>Der Fall (nach gruender.de, 2025)</strong>
+    Nachhaltigkeit ist längst kein Trend mehr, sondern eine Notwendigkeit. Nachhaltige Produkte sind aber oft teuer. Genau hier setzt Aldi Süd mit der Marke <b>„Nur Nur Natur“</b> an: 100 % natürliche Zutaten ohne künstliche Zusatzstoffe, Transparenz in der Lieferkette, nachhaltige Produktion und trotzdem erschwingliche Preise. Ziel ist nicht nur der Verkauf von Bio-Produkten, sondern die <b>Positionierung als nachhaltiger Discounter</b>. Edeka und Rewe haben zwar eigene Bio-Marken, Aldi Süd verfolgt aber eine aggressivere Preisstrategie: Durch <b>Skaleneffekte</b> kann das Unternehmen Bio-Produkte günstiger anbieten. Sollte das Konzept Erfolg haben, könnten Discounter weltweit ähnliche Strategien verfolgen.
+  </div>
+
+  <div class="card" data-ia="m1">
+    <div class="ia-head"><span class="ia-badge">Übung 0.1</span><h3>Den Fall verstehen</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="m1"></div>
+  </div>
+
+  <details class="teacher">
+    <summary>Hinweise für Lehrkräfte</summary>
+    <p class="small">Die Seite festigt die IÖB-Unterrichtseinheit „Strategisches Marketing – mit einer langfristigen Planung zum Erfolg“ (M1–M7, Arbeitsblatt Analysetools, Erwartungshorizont). Die Kapitel 1–5 entsprechen M2–M6 und eignen sich auch als Expertenmaterial für das Gruppenpuzzle. Kapitel 6 erweitert die im Arbeitsblatt genannten Marketingstrategien (Wachstum, Segmentierung, Positionierung). Kapitel 7 fasst die Ergebnisse des Film-Based-Trainings „MOVE Motion“ laut Erwartungshorizont zusammen. Es ersetzt das Training nicht, sondern eignet sich zur Sicherung danach. Zahlenbeispiele in Kapitel 3 und 5 sowie die Maßnahmen zur SWOT-Strategie sind didaktisch konstruiert.</p>
+  </details>
+</section>
+
+<!-- ================= K1 ================= -->
+<section class="chapter" id="k1" data-title="Strategisch vs. operativ" data-meta="Abgrenzung (M2)" data-group="Grundlagen">
+  <div class="kicker">Kapitel 1 · Grundlagen</div>
+  <h2>Strategisch oder operativ? Zwei Ebenen des Marketings</h2>
+  <p class="lead">Unternehmen sind Institutionen, in denen viele Menschen zusammenarbeiten. Damit sie nicht chaotisch entscheiden, brauchen alle eine präzise Vorstellung davon, wohin die Reise geht.</p>
+
+  <p><b>Ein Beispiel:</b> Die Geschäftsleitung führt ein enttäuschendes Quartalsergebnis auf ungewöhnlich viele Kundenabwanderungen zurück. Sie gibt als Unternehmensziel vor, den Anteil zufriedener Kunden <b>innerhalb von zwei Jahren von 60 % auf 80 %</b> zu erhöhen. In Meetings diskutieren die Abteilungen dann, welche Maßnahmen sie im Tagesgeschäft ergreifen, um dieses Ziel zu erreichen.</p>
+
+  <div class="grid2">
+    <div class="card" style="margin:0;border-top:5px solid #5B3FA8"><h4>Strategisches Marketing</h4><p class="small" style="margin:0">Planung der <b>langfristigen</b> Marketingziele und -strategien, meist durch die Unternehmensleitung. Es legt <b>Richtung, Prioritäten und Zielmärkte</b> fest. Grundlage sind Daten und Analysen.</p></div>
+    <div class="card" style="margin:0;border-top:5px solid #176B73"><h4>Operatives Marketing</h4><p class="small" style="margin:0">Umsetzung der Strategie durch <b>konkrete Maßnahmen</b> des Marketing-Mix (Produkt-, Preis-, Vertriebs- und Kommunikationspolitik), ausgerichtet an <b>kurzfristigen</b> Zielen und in engen Zeitfenstern.</p></div>
+  </div>
+
+  <div class="card" data-ia="fahrplan">
+    <div class="ia-head"><span class="ia-badge">Übung 1.1</span><h3>Die Fahrplan-Metapher</h3><span class="ia-done">✓ erledigt</span></div>
+    <p class="small muted">Vervollständige den Text (nach Gelbrich/Müller 2024).</p>
+    <div id="fahrplan"></div>
+  </div>
+
+  <div class="card" data-ia="kriterien">
+    <div class="ia-head"><span class="ia-badge">Übung 1.2</span><h3>Kriterienorientierte Abgrenzung</h3><span class="ia-done">✓ erledigt</span></div>
+    <p class="small muted">Gehört die Aussage zum strategischen oder zum operativen Marketing? Am Ende entsteht daraus eine Abgrenzungstabelle für dein Heft.</p>
+    <div id="kriterien"></div>
+    <div id="kritTable"></div>
+  </div>
+
+  <div class="card" data-ia="aldi">
+    <div class="ia-head"><span class="ia-badge">Übung 1.3</span><h3>Aldi Süd: Was ist Strategie, was Umsetzung?</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="aldi"></div>
+  </div>
+
+  <div class="card" data-ia="prozess">
+    <div class="ia-head"><span class="ia-badge">Übung 1.4</span><h3>Der Planungsprozess in der richtigen Reihenfolge</h3><span class="ia-done">✓ erledigt</span></div>
+    <p class="small muted">Bring die Schritte mit den Pfeilen in die richtige Reihenfolge und prüfe dann.</p>
+    <div id="prozess"></div>
+  </div>
+
+  <div class="box task">
+    <strong>Arbeitsaufträge</strong>
+    <ol>
+      <li><span class="op">Definieren Sie</span> den Begriff „strategisches Marketing“, indem Sie ihn kriterienorientiert vom operativen Marketing abgrenzen.</li>
+      <li><span class="op">Notieren Sie</span> je ein eigenes Beispiel für strategisches und operatives Marketing eines Unternehmens Ihrer Wahl.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= K2 ================= -->
+<section class="chapter" id="k2" data-title="Marktforschung" data-meta="Analysetool 1 (M3)" data-group="Die vier Analysetools">
+  <div class="kicker">Kapitel 2 · Analysetool 1</div>
+  <h2>Marktforschung: Wissen statt Bauchgefühl</h2>
+  <p class="lead">Marktforschung liefert die zahlenbasierte Grundlage für alle weiteren Entscheidungen. Ohne sie würden viele Maßnahmen auf dem Bauchgefühl beruhen.</p>
+
+  <div class="box merke"><strong>Definition</strong>Marktforschung ist das <b>systematische Gewinnen, Auswerten und Dokumentieren</b> von Informationen über Märkte, Kundengruppen, Wettbewerber und relevante Rahmenbedingungen. Sie zeigt den Ist-Zustand (Chancen und Risiken) und stellt Prognosen über künftige Entwicklungen auf.</div>
+
+  <h3>Warum betreiben Unternehmen Marktforschung?</h3>
+  <div class="grid3">
+    <div class="card" style="margin:0"><h4>Orientierung</h4><p class="small" style="margin:0">in dynamischen, internationalen Märkten</p></div>
+    <div class="card" style="margin:0"><h4>Kundenbedürfnisse</h4><p class="small" style="margin:0">aktuelle Bedürfnisse und Präferenzen erkennen</p></div>
+    <div class="card" style="margin:0"><h4>Potenziale</h4><p class="small" style="margin:0">Innovations- und Marktpotenziale neuer Produkte einschätzen</p></div>
+    <div class="card" style="margin:0"><h4>Wettbewerb</h4><p class="small" style="margin:0">Wettbewerber analysieren, eigene Angebote besser positionieren</p></div>
+    <div class="card" style="margin:0"><h4>Optimierung</h4><p class="small" style="margin:0">Kommunikation, Vertrieb und Preisstrategien verbessern</p></div>
+    <div class="card" style="margin:0"><h4>Absicherung</h4><p class="small" style="margin:0">strategische Investitionen mit Daten absichern, Fehlentscheidungen vermeiden</p></div>
+  </div>
+
+  <h3>Quellen der Marktforschung</h3>
+  <div class="grid2">
+    <div class="card" style="margin:0"><h4>Primärmarktforschung (field research)</h4><p class="small" style="margin:0">Untersuchungen mit <b>eigener Datenerhebung</b> für genau diese Fragestellung: Befragung, Beobachtung, Experiment, Testmarkt. Aktuell und passgenau, aber teuer und aufwendig.</p></div>
+    <div class="card" style="margin:0"><h4>Sekundärmarktforschung (desk research)</h4><p class="small" style="margin:0">Auswertung von Daten, die <b>für andere Zwecke</b> erhoben wurden: Statistiken, Studien, Branchenberichte, eigene Umsatzdaten. Schnell und günstig, aber nicht immer passgenau.</p></div>
+  </div>
+  <p class="small" style="margin-top:12px">Die Daten können aus <b>internen Quellen</b> stammen (unternehmensinterne Daten wie Umsatz- oder Reklamationsstatistiken) oder aus <b>externen Quellen</b> (Marktdaten über Kunden und Wettbewerber, Umweltdaten über Wirtschaft, Recht, Technik und Gesellschaft).</p>
+
+  <div class="card" data-ia="primsek">
+    <div class="ia-head"><span class="ia-badge">Übung 2.1</span><h3>Field oder desk?</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="primsek"></div>
+  </div>
+
+  <div class="card" data-ia="intext">
+    <div class="ia-head"><span class="ia-badge">Übung 2.2</span><h3>Interne oder externe Quelle?</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="intext"></div>
+  </div>
+
+  <h3>Marktforschung im digitalen Wandel</h3>
+  <p>Transaktionsdaten, Web Analytics und Social-Media-Signale (Likes, Shares) liefern zeitnahe und tiefe Einblicke. Künstliche Intelligenz beschleunigt die Auswertung und ermöglicht komplexere Prognosen. Weil Produktlebenszyklen kürzer werden und Konsumentinnen und Konsumenten viele verschiedene Informationskanäle nutzen, muss Marktforschung <b>kontinuierlich und agil</b> sein. Rechtliche und ethische Anforderungen, vor allem der Datenschutz, bestimmen, welche Daten erhoben werden dürfen.</p>
+
+  <div class="card" data-ia="digital">
+    <div class="ia-head"><span class="ia-badge">Übung 2.3</span><h3>Chance oder Herausforderung?</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="digital"></div>
+  </div>
+</section>
+
+<!-- ================= K3 ================= -->
+<section class="chapter" id="k3" data-title="Marktanalyse" data-meta="Analysetool 2 (M4)" data-group="Die vier Analysetools">
+  <div class="kicker">Kapitel 3 · Analysetool 2</div>
+  <h2>Marktanalyse: Aus Daten werden Erkenntnisse</h2>
+  <p class="lead">Die Marktforschung sammelt die Daten, die Marktanalyse wertet sie systematisch aus. Sie untersucht einen bestimmten Markt zu einem bestimmten Zeitpunkt.</p>
+
+  <div class="box merke"><strong>Definition</strong>Die Marktanalyse wertet Zahlen, Daten, Fakten und Beispiele aus der Marktforschung aus, um <b>aktuelle, verlässliche und nachvollziehbare</b> Antworten auf eine konkrete Fragestellung zu bekommen. Sie zeigt die Entwicklung in der Vergangenheit, beschreibt den gegenwärtigen Stand und lässt vor allem <b>Aussagen über die Zukunft</b> zu: Prognosen, die mit Fakten belegt werden müssen.</div>
+
+  <h3>Die vier Untersuchungsbereiche</h3>
+  <div class="grid4">
+    <div class="card" style="margin:0"><h4>Nachfrager im Markt</h4><p class="small" style="margin:0">Zielgruppe, Bedürfnisse, Anforderungen, Kaufkraft</p></div>
+    <div class="card" style="margin:0"><h4>Wettbewerber</h4><p class="small" style="margin:0">Wer? Marktanteile? Stärken und Schwächen aus Kundensicht?</p></div>
+    <div class="card" style="margin:0"><h4>Situation des Unternehmens</h4><p class="small" style="margin:0">eigener Absatz, Marktanteil, Schwankungen</p></div>
+    <div class="card" style="margin:0"><h4>Globale Faktoren</h4><p class="small" style="margin:0">Rahmenbedingungen: Wirtschaft, Recht, Technik, Gesellschaft</p></div>
+  </div>
+
+  <div class="card" data-ia="bereiche">
+    <div class="ia-head"><span class="ia-badge">Übung 3.1</span><h3>Welche Fragestellung gehört wohin?</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="bereiche"></div>
+  </div>
+
+  <h3>Wichtige Marktkennzahlen</h3>
+  <div style="overflow-x:auto"><table>
+    <tr><th>Kennzahl</th><th>Bedeutung</th><th>Berechnung</th></tr>
+    <tr><td><b>Marktpotenzial</b></td><td>maximal mögliche Absatzmenge eines Produkts in einem Markt („Was wäre möglich?“)</td><td>Schätzung</td></tr>
+    <tr><td><b>Marktvolumen</b></td><td>tatsächlich realisierte Absatzmenge aller Anbieter in einem Zeitraum</td><td>Summe aller Absätze</td></tr>
+    <tr><td><b>Sättigungsgrad</b></td><td>Wie weit ist das Potenzial schon ausgeschöpft?</td><td>Marktvolumen ÷ Marktpotenzial × 100</td></tr>
+    <tr><td><b>Marktanteil</b></td><td>Anteil des eigenen Absatzes am Marktvolumen</td><td>eigener Absatz ÷ Marktvolumen × 100</td></tr>
+    <tr><td><b>Relativer Marktanteil</b></td><td>eigener Marktanteil im Vergleich zum <b>größten Konkurrenten</b>; wichtig für die Portfolioanalyse</td><td>eigener Marktanteil ÷ Marktanteil des größten Konkurrenten</td></tr>
+    <tr><td><b>Marktwachstum</b></td><td>Veränderung des Marktvolumens gegenüber dem Vorjahr</td><td>(Volumen neu − Volumen alt) ÷ Volumen alt × 100</td></tr>
+  </table></div>
+
+  <div class="card" data-ia="rechnen">
+    <div class="ia-head"><span class="ia-badge">Übung 3.2</span><h3>Rechne den E-Bike-Markt durch</h3><span class="ia-done">✓ erledigt</span></div>
+    <div class="box info" style="margin-top:0"><strong>Daten (fiktiv)</strong>Für E-Bikes in einer Region schätzt man ein Marktpotenzial von <b>200.000 Stück</b> pro Jahr. Tatsächlich verkauft wurden in diesem Jahr <b>120.000 Stück</b>, im Vorjahr waren es <b>100.000 Stück</b>. Das Unternehmen <b>VeloNova</b> hat <b>18.000</b> E-Bikes verkauft, der größte Konkurrent <b>36.000</b>.</div>
+    <p class="small muted">Gib die Ergebnisse ein. Prozentwerte ohne %-Zeichen, Komma oder Punkt ist egal.</p>
+    <div id="rechnen"></div>
+  </div>
+
+  <div class="box task">
+    <strong>Arbeitsauftrag</strong>
+    <span class="op">Formulieren Sie</span> für ein Produkt Ihrer Wahl je eine Fragestellung für die vier Bereiche der Marktanalyse.
+  </div>
+</section>
+
+<!-- ================= K4 ================= -->
+<section class="chapter" id="k4" data-title="SWOT-Analyse" data-meta="Analysetool 3 (M5)" data-group="Die vier Analysetools">
+  <div class="kicker">Kapitel 4 · Analysetool 3</div>
+  <h2>SWOT-Analyse: Innen und außen in Beziehung setzen</h2>
+  <p class="lead">Die SWOT-Analyse verknüpft die interne Leistungsfähigkeit eines Unternehmens mit den externen Einflüssen des Marktes.</p>
+
+  <div class="swot">
+    <div></div><div class="hd">hilfreich (+)</div><div class="hd">hinderlich (−)</div>
+    <div class="hd">Unternehmen<br><span style="font-weight:500">intern · beeinflussbar</span></div>
+    <div class="cell c-s"><h5>S – Strengths (Stärken)</h5>Kernkompetenzen, technologischer Vorsprung, bekannte Marken, effiziente Prozesse, stabile Finanzen</div>
+    <div class="cell c-w"><h5>W – Weaknesses (Schwächen)</h5>mangelnde Innovationskraft, geringe Marktpräsenz, ineffiziente Abläufe, fehlende Qualifikationen</div>
+    <div class="hd">Markt / Umwelt<br><span style="font-weight:500">extern · nicht kontrollierbar</span></div>
+    <div class="cell c-o"><h5>O – Opportunities (Chancen)</h5>neue Kundensegmente, regulatorische Erleichterungen, technologische Durchbrüche, Marktverschiebungen</div>
+    <div class="cell c-t"><h5>T – Threats (Risiken)</h5>verschärfter Wettbewerb, Konjunkturabschwung, rechtliche Einschränkungen, disruptive Technologien</div>
+  </div>
+
+  <div class="box info"><strong>Merkhilfe</strong>Stärken und Schwächen beschreiben das <b>Unternehmen selbst</b>: Das Unternehmen kann sie direkt verändern. Chancen und Risiken kommen von <b>außen</b>: Das Unternehmen kann sie nicht kontrollieren, nur darauf reagieren. Ein häufiger Fehler ist es, „Konkurrenz senkt Preise“ als Schwäche einzutragen. Das ist ein Risiko!</div>
+
+  <div class="card" data-ia="swotsort">
+    <div class="ia-head"><span class="ia-badge">Übung 4.1</span><h3>SWOT für MOVE Motion</h3><span class="ia-done">✓ erledigt</span></div>
+    <p class="small muted">MOVE Motion ist das (fiktive) Sportunternehmen aus dem Film-Based-Training. Ordne die Befunde zu. Am Ende entsteht die SWOT-Matrix.</p>
+    <div id="swotsort"></div>
+    <div id="swotGrid"></div>
+  </div>
+
+  <h3>Von der Bestandsaufnahme zur Strategie</h3>
+  <p>Die SWOT-Analyse ist nicht nur ein Werkzeug zur Bestandsaufnahme. Kombiniert man die Felder, erhält man Handlungsoptionen:</p>
+  <div class="swot">
+    <div></div><div class="hd">Stärken</div><div class="hd">Schwächen</div>
+    <div class="hd">Chancen</div>
+    <div class="cell c-s"><h5>SO: Ausbauen</h5>Stärken werden erhöht oder kommen am Markt besser zur Geltung. <b>Stärken nutzen, um Chancen zu ergreifen.</b></div>
+    <div class="cell c-o"><h5>WO: Aufholen</h5>Schwächen können kompensiert oder ausgeglichen werden. <b>Schwächen abbauen, um Chancen zu nutzen.</b></div>
+    <div class="hd">Risiken</div>
+    <div class="cell c-t"><h5>ST: Absichern</h5>Stärken gehen verloren oder sind am Markt nicht mehr wirksam. <b>Stärken einsetzen, um Risiken abzuwehren.</b></div>
+    <div class="cell c-w"><h5>WT: Vermeiden</h5>Schwächen werden verschärft oder wirken sich stärker aus. <b>Schadensbegrenzung und Risikovermeidung.</b></div>
+  </div>
+
+  <div class="card" data-ia="swotstrat">
+    <div class="ia-head"><span class="ia-badge">Übung 4.2</span><h3>Welche Strategie-Kombination ist das?</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="swotstrat"></div>
+  </div>
+
+  <div class="card" data-ia="swotown">
+    <div class="ia-head"><span class="ia-badge">Werkzeug</span><h3>Deine eigene SWOT-Analyse</h3><span class="ia-done">✓ erledigt</span></div>
+    <p class="small muted">Wähle ein Unternehmen, zum Beispiel Aldi Süd, deinen Lieblings-Sportartikelhersteller oder ein Unternehmen aus deiner Region. Fülle die vier Felder aus und leite zwei Strategien ab. Mindestens vier ausgefüllte Felder zählen als erledigt.</p>
+    <div id="swotown"></div>
+  </div>
+</section>
+
+<!-- ================= K5 ================= -->
+<section class="chapter" id="k5" data-title="Portfolioanalyse" data-meta="Analysetool 4 (M6)" data-group="Die vier Analysetools">
+  <div class="kicker">Kapitel 5 · Analysetool 4</div>
+  <h2>Portfolioanalyse: Welche Produkte haben Zukunft?</h2>
+  <p class="lead">Mit der Portfolioanalyse bewertet ein Unternehmen sein gesamtes Produkt- und Dienstleistungsangebot und entscheidet, wo es investiert und wo es sich zurückzieht.</p>
+
+  <p>Das bekannteste Modell ist das <b>Marktanteils-Marktwachstums-Portfolio der Boston Consulting Group (BCG)</b>. Jedes Produkt oder Geschäftsfeld wird nach zwei Kriterien eingeordnet:</p>
+  <ul>
+    <li><b>Marktwachstum</b> (senkrechte Achse): Wie attraktiv ist der Markt? Wächst er stark oder stagniert er?</li>
+    <li><b>Relativer Marktanteil</b> (waagerechte Achse): Wie stark ist das Unternehmen im Vergleich zum größten Konkurrenten? Ein Wert über 1 bedeutet Marktführerschaft.</li>
+  </ul>
+
+  <div class="quad-legend">
+    <div style="background:var(--yellow-soft)"><b>❓ Question Marks</b>hohes Wachstum, niedriger Marktanteil<br><i>Norm: investieren <u>oder</u> aussteigen</i> (Ziel: Wachstum oder Desinvestition)</div>
+    <div style="background:var(--green-soft)"><b>⭐ Stars</b>hohes Wachstum, hoher Marktanteil<br><i>Norm: weiter investieren</i> (Ziel: Wachstum), überdurchschnittlich profitabel</div>
+    <div style="background:var(--teal-soft)"><b>🐄 Cash Cows</b>geringes Wachstum, hoher Marktanteil<br><i>Norm: abschöpfen</i>: Gewinne in Stars und Question Marks investieren</div>
+    <div style="background:var(--red-soft)"><b>🐕 Poor Dogs</b>geringes Wachstum, niedriger Marktanteil<br><i>Norm: eher früher als später zurückziehen</i> (Desinvestition)</div>
+  </div>
+  <p class="small muted">Typischer Lebensweg eines Produkts: Es startet als Question Mark, wird bei Erfolg zum Star, reift zur Cash Cow und endet als Poor Dog. Ein ausgewogenes Portfolio braucht deshalb Produkte in verschiedenen Phasen.</p>
+
+  <div class="card" data-ia="normstrat">
+    <div class="ia-head"><span class="ia-badge">Übung 5.1</span><h3>Situation erkennen, Normstrategie zuordnen</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="normstrat"></div>
+  </div>
+
+  <div class="card" data-ia="bcg">
+    <div class="ia-head"><span class="ia-badge">Übung 5.2</span><h3>Das Portfolio von FreshCo erstellen</h3><span class="ia-done">✓ erledigt</span></div>
+    <div class="box info" style="margin-top:0"><strong>So gehst du vor</strong>Berechne für jedes Getränk den <b>relativen Marktanteil</b> (eigener Marktanteil ÷ Marktanteil des größten Konkurrenten, auf eine Nachkommastelle). Ordne es dann dem passenden Feld zu. Grenzwerte: Marktwachstum <b>10 %</b>, relativer Marktanteil <b>1,0</b>. Die Zahlen sind fiktiv.</div>
+    <div id="bcg"></div>
+  </div>
+
+  <div class="card" data-ia="moveport">
+    <div class="ia-head"><span class="ia-badge">Übung 5.3</span><h3>Das Portfolio von MOVE Motion</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="moveport"></div>
+  </div>
+
+  <div class="box warn"><strong>Grenzen der Portfolioanalyse</strong>Das Modell vereinfacht stark: Nur zwei Kriterien entscheiden. Die Grenzwerte sind willkürlich, und Zusammenhänge zwischen Produkten werden übersehen. Ein „Poor Dog“ kann zum Beispiel nötig sein, weil Kunden ein vollständiges Sortiment erwarten. Die Normstrategien sind deshalb Denkanstöße, keine Automatismen.</div>
+</section>
+
+<!-- ================= K6 ================= -->
+<section class="chapter" id="k6" data-title="Von der Analyse zur Strategie" data-meta="Ziele & Strategien" data-group="Strategie & Anwendung">
+  <div class="kicker">Kapitel 6 · Strategische Marketingplanung</div>
+  <h2>Von der Analyse zur Strategie</h2>
+  <p class="lead">Die Analysetools liefern die Datengrundlage. Daraus leitet die Unternehmensleitung Marketingziele ab und legt Strategien fest, die dann der Marketing-Mix umsetzt.</p>
+
+  <h3>Marketingziele</h3>
+  <p>Aus den übergeordneten Unternehmenszielen werden speziellere <b>Marketingziele</b> abgeleitet: Was wollen wir erreichen, und welchen Beitrag muss das Marketing leisten? Man unterscheidet <b>ökonomische Ziele</b> (direkt in Geld oder Mengen messbar, z. B. Umsatz, Absatz, Marktanteil, Gewinn) und <b>psychografische Ziele</b> (beziehen sich auf das Denken und Fühlen der Kunden, z. B. Bekanntheit, Image, Kundenzufriedenheit). Gute Ziele sind präzise: Sie legen <b>Inhalt, Ausmaß und Zeitraum</b> fest, etwa „Kundenzufriedenheit in zwei Jahren von 60 % auf 80 % steigern“.</p>
+
+  <div class="card" data-ia="ziele">
+    <div class="ia-head"><span class="ia-badge">Übung 6.1</span><h3>Ökonomisch oder psychografisch?</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="ziele"></div>
+  </div>
+
+  <h3>Die drei Marketingstrategien</h3>
+  <div class="grid3">
+    <div class="card" style="margin:0;border-top:5px solid var(--red)"><h4>Segmentierungsstrategie</h4><p class="small" style="margin:0"><b>Wen sprechen wir an?</b> Der Gesamtmarkt wird in möglichst einheitliche Kundengruppen (Segmente) aufgeteilt. Das Unternehmen entscheidet, welche es bearbeitet.</p></div>
+    <div class="card" style="margin:0;border-top:5px solid var(--violet)"><h4>Positionierungsstrategie</h4><p class="small" style="margin:0"><b>Wie wollen wir wahrgenommen werden?</b> Die Marke bekommt einen klaren, unverwechselbaren Platz in den Köpfen der Zielgruppe, in Abgrenzung zur Konkurrenz.</p></div>
+    <div class="card" style="margin:0;border-top:5px solid var(--teal)"><h4>Wachstumsstrategie</h4><p class="small" style="margin:0"><b>Wie wollen wir wachsen?</b> Mit bestehenden oder neuen Produkten, auf bestehenden oder neuen Märkten (Ansoff-Matrix).</p></div>
+  </div>
+
+  <div class="card" data-ia="segment">
+    <div class="ia-head"><span class="ia-badge">Übung 6.2</span><h3>Nach welchem Kriterium wird segmentiert?</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="segment"></div>
+  </div>
+
+  <div class="card" data-ia="posmap">
+    <div class="ia-head"><span class="ia-badge">Übung 6.3</span><h3>Positionierungskreuz: Wo ist die Marktlücke?</h3><span class="ia-done">✓ erledigt</span></div>
+    <p class="small muted">Ein Positionierungskreuz zeigt, wie Kunden Angebote auf zwei wichtigen Merkmalen wahrnehmen, hier Preisniveau und Nachhaltigkeit. Ordne die Angebote ein.</p>
+    <div id="posmap"></div>
+  </div>
+
+  <h3>Wachstumsstrategien nach Ansoff</h3>
+  <div class="swot">
+    <div></div><div class="hd">bestehende Produkte</div><div class="hd">neue Produkte</div>
+    <div class="hd">bestehende Märkte</div>
+    <div class="cell c-s"><h5>Marktdurchdringung</h5>mehr vom Bisherigen an die bisherigen Kunden verkaufen (z. B. Preisaktionen, mehr Werbung). Geringstes Risiko.</div>
+    <div class="cell c-o"><h5>Produktentwicklung</h5>neue Produkte für die bestehenden Kunden</div>
+    <div class="hd">neue Märkte</div>
+    <div class="cell c-t"><h5>Marktentwicklung</h5>bestehende Produkte in neuen Märkten (Regionen, Zielgruppen) anbieten</div>
+    <div class="cell c-w"><h5>Diversifikation</h5>neue Produkte auf neuen Märkten. Höchstes Risiko.</div>
+  </div>
+
+  <div class="card" data-ia="ansoff">
+    <div class="ia-head"><span class="ia-badge">Übung 6.4</span><h3>Welche Wachstumsstrategie?</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="ansoff"></div>
+  </div>
+</section>
+
+<!-- ================= K7 ================= -->
+<section class="chapter" id="k7" data-title="Fallstudie MOVE Motion" data-meta="Anwendung & Sun Tzu (M7)" data-group="Strategie & Anwendung">
+  <div class="kicker">Kapitel 7 · Anwendung</div>
+  <h2>Fallstudie: MOVE Motion sucht eine Strategie</h2>
+  <p class="lead">Trotz neuer Produktlinien und Marketingkampagnen läuft es bei MOVE Motion nicht wie erhofft. Chef Heiner Borsig lädt Marketingexperte Mattis Jung zur Krisensitzung.</p>
+
+  <p>Das Ergebnis der Sitzung: Dem neuen Marketingkonzept liegt <b>keine langfristig angelegte Strategie</b> zugrunde. Dabei ist sie die Basis für alle operativen Maßnahmen. Mit den vier Analysetools schafft das junge Marketingteam nun eine Datengrundlage, um das Konzept zu hinterfragen und neu auszurichten.</p>
+
+  <div class="card" data-ia="movetools">
+    <div class="ia-head"><span class="ia-badge">Übung 7.1</span><h3>Welches Tool lieferte welchen Befund?</h3><span class="ia-done">✓ erledigt</span></div>
+    <p class="small muted">Die Befunde stammen aus dem Film-Based-Training (Teil 2).</p>
+    <div id="movetools"></div>
+  </div>
+
+  <div class="card" data-ia="diagnose">
+    <div class="ia-head"><span class="ia-badge">Übung 7.2</span><h3>Diagnose und Empfehlung</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="diagnose"></div>
+  </div>
+
+  <h3>Was ein chinesischer General über Marketing wusste</h3>
+  <div class="quote">„Wenn du den Feind kennst und dich selbst kennst, brauchst du den Ausgang von hundert Schlachten nicht zu fürchten. Wenn du dich selbst kennst, doch nicht den Feind, wirst du für jeden Sieg, den du erringst, eine Niederlage erleiden. Wenn du weder den Feind noch dich selbst kennst, wirst du in jeder Schlacht unterliegen.“<div class="small muted" style="font-family:var(--font-body);margin-top:6px">Sun Tzu (Sunzi), Die Kunst des Krieges</div></div>
+
+  <div class="card" data-ia="suntzu">
+    <div class="ia-head"><span class="ia-badge">Übung 7.3</span><h3>Übertrage das Zitat auf Unternehmen</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="suntzu"></div>
+  </div>
+
+  <div class="box task">
+    <strong>Arbeitsauftrag</strong>
+    <span class="op">Beurteilen Sie</span> die Bedeutung des strategischen Marketings für den Erfolg eines Unternehmens. Beziehen Sie sich auf das Beispiel MOVE Motion und das Zitat von Sun Tzu.
+  </div>
+</section>
+
+<!-- ================= K8 ================= -->
+<section class="chapter" id="k8" data-title="Abschluss & Arbeitsblatt" data-meta="Tafelbild · Quiz · Druck" data-group="Strategie & Anwendung">
+  <div class="kicker">Kapitel 8 · Sicherung</div>
+  <h2>Alles auf einen Blick</h2>
+  <p class="lead">Vervollständige das Tafelbild, teste dein Wissen und fülle das Arbeitsblatt aus.</p>
+
+  <div class="card" data-ia="tafel">
+    <div class="ia-head"><span class="ia-badge">Tafelbild</span><h3>Strategisches Marketing auf Basis von Daten und Analysen</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="tafel"></div>
+  </div>
+
+  <div class="card" data-ia="final">
+    <div class="ia-head"><span class="ia-badge">Abschlussquiz</span><h3>12 Fragen zur Wiederholung</h3><span class="ia-done">✓ erledigt</span></div>
+    <div id="final"></div>
+  </div>
+
+  <div class="card" data-ia="ab">
+    <div class="ia-head"><span class="ia-badge">Arbeitsblatt</span><h3>Analysetools des strategischen Marketings</h3><span class="ia-done">✓ erledigt</span></div>
+    <p class="small muted">Formuliere für jedes Tool Definition, Vorgehen und Ziele mit eigenen Worten und ergänze das Beispiel MOVE Motion. Vergleiche anschließend mit dem Erwartungshorizont und drucke das Blatt aus.</p>
+    <div id="ab"></div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <b>Durchschaut! – Strategisches Marketing</b> · Vertiefung für den Unterricht in Wirtschaft &amp; Recht (Sek. II). Grundlage: Unterrichtseinheit „Strategisches Marketing – mit einer langfristigen Planung zum Erfolg“ (Institut für Ökonomische Bildung, 2026) samt Erwartungshorizont; Gelbrich/Müller: Erfolgsfaktoren des Marketings (2024). MOVE Motion, VeloNova und FreshCo sind fiktive Unternehmen; die Zahlenbeispiele sind konstruiert. · <a href="Wie_funktioniert_Werbung.html">Zur Plattform „Wie funktioniert Werbung?“</a>
+</footer>
+<div id="printArea"></div>
+<script>
+/* =========================================================
+   Durchschaut! – Vertiefung „Strategisches Marketing“
+   ========================================================= */
+(function(){
+"use strict";
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = (n, d=2) => n.toFixed(d).replace('.', ',');
+const parseNum = v => { if(v==null) return NaN; v = String(v).trim().replace(/€|%|\s/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',', '.'); return v===''?NaN:Number(v); };
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a; }
+
+/* ---------------- Speicher ---------------- */
+const KEY = 'durchschaut-stratmarketing-v1';
+const S = {
+  data: { done:{}, theme:null, txt:{} },
+  load(){ try{ const raw = localStorage.getItem(KEY); if(raw){ const d = JSON.parse(raw); if(d && typeof d==='object') this.data = Object.assign(this.data, d); } }catch(e){} if(!this.data.done) this.data.done={}; if(!this.data.txt) this.data.txt={}; },
+  save(){ try{ localStorage.setItem(KEY, JSON.stringify(this.data)); }catch(e){} }
+};
+S.load();
+
+/* ---------------- Theme ---------------- */
+function applyTheme(){ const t = S.data.theme; if(t) document.documentElement.setAttribute('data-theme', t); else document.documentElement.removeAttribute('data-theme'); }
+applyTheme();
+$('#themeBtn').addEventListener('click', () => {
+  const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const cur = S.data.theme || (sysDark ? 'dark' : 'light');
+  S.data.theme = cur === 'dark' ? 'light' : 'dark'; S.save(); applyTheme();
+});
+
+/* ---------------- Fortschritt ---------------- */
+const allIA = $$('[data-ia]').map(el => el.dataset.ia);
+function done(key){
+  if(!S.data.done[key]){ S.data.done[key] = true; S.save(); }
+  const card = document.querySelector('[data-ia="'+key+'"]'); if(card) card.classList.add('is-done');
+  updateProgress();
+}
+function updateProgress(){
+  const n = allIA.filter(k => S.data.done[k]).length;
+  $('#progBar').style.width = (100*n/allIA.length) + '%';
+  $('#progLabel').textContent = n + ' von ' + allIA.length + ' Übungen';
+  $$('.chapter').forEach(sec => {
+    const keys = $$('[data-ia]', sec).map(e => e.dataset.ia);
+    const d = keys.filter(k => S.data.done[k]).length;
+    const a = document.querySelector('#navList a[href="#'+sec.id+'"] .chk');
+    if(a) a.textContent = keys.length ? (d===keys.length ? '✓' : d+'/'+keys.length) : '';
+  });
+}
+$('#resetBtn').addEventListener('click', () => {
+  if(!window.confirm('Willst du deinen gesamten Fortschritt wirklich zurücksetzen?')) return;
+  S.data = { done:{}, theme:S.data.theme, txt:{} }; S.save(); location.hash = '#k0'; location.reload();
+});
+
+/* ---------------- Navigation ---------------- */
+const chapters = $$('.chapter');
+(function(){
+  let lastGroup = null, html = '';
+  chapters.forEach((c, i) => {
+    if(c.dataset.group !== lastGroup){ html += (lastGroup ? '</ol>' : '') + '<div class="side-group">'+esc(c.dataset.group)+'</div><ol>'; lastGroup = c.dataset.group; }
+    html += '<li><a href="#'+c.id+'"><span class="num">'+i+'</span><span>'+esc(c.dataset.title)+'<span class="meta">'+esc(c.dataset.meta)+'</span></span><span class="chk"></span></a></li>';
+  });
+  $('#navList').innerHTML = html + '</ol>';
+  chapters.forEach((c,i) => {
+    const prev = chapters[i-1], next = chapters[i+1];
+    const div = document.createElement('div'); div.className = 'chap-nav';
+    div.innerHTML = (prev ? '<a class="prev" href="#'+prev.id+'"><small>← zurück</small><b>'+esc(prev.dataset.title)+'</b></a>' : '') +
+                    (next ? '<a class="next" href="#'+next.id+'"><small>weiter →</small><b>'+esc(next.dataset.title)+'</b></a>' : '');
+    c.appendChild(div);
+  });
+})();
+function route(){
+  const id = (location.hash || '#k0').slice(1);
+  const el = document.getElementById(id);
+  const target = el && el.classList.contains('chapter') ? id : 'k0';
+  chapters.forEach(c => c.classList.toggle('active', c.id === target));
+  $$('#navList a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+target));
+  $('#sidebar').classList.remove('open');
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+$('#menuBtn').addEventListener('click', () => $('#sidebar').classList.toggle('open'));
+
+/* ---------------- Drucken ---------------- */
+function printHTML(title, inner){
+  const pa = $('#printArea');
+  pa.innerHTML = '<div style="font-family:Arial,Helvetica,sans-serif;max-width:720px;margin:0 auto"><h1 style="font-size:20pt;margin:0 0 4px">'+esc(title)+'</h1><p style="color:#555;margin:0 0 16px;font-size:10pt">Durchschaut! – Strategisches Marketing · '+new Date().toLocaleDateString('de-DE')+'</p>'+inner+'</div>';
+  document.body.classList.add('printing');
+  const off = () => { document.body.classList.remove('printing'); window.removeEventListener('afterprint', off); };
+  window.addEventListener('afterprint', off);
+  window.print();
+  setTimeout(off, 1500);
+}
+
+/* =========================================================
+   Bausteine
+   ========================================================= */
+function quizList(id, items, key, opts={}){
+  const root = document.getElementById(id); if(!root) return;
+  let answered = 0, correct = 0; const given = [];
+  const shared = opts.options;
+  root.innerHTML = items.map((it, i) => {
+    const options = it.options || shared;
+    return '<div class="q-item" data-i="'+i+'"><div class="q-text">'+(i+1)+'. '+it.q+'</div><div class="q-opts">'+
+      options.map((o,j) => '<button class="opt" data-j="'+j+'">'+o+'</button>').join('')+'</div><div class="q-fb"></div></div>';
+  }).join('') + '<div class="q-summary" style="margin-top:14px"></div>';
+  root.onclick = e => {
+    if(e.target.closest('.q-retry')){ quizList(id, shuffle(items), key, opts); if(opts.onReset) opts.onReset(); return; }
+    const b = e.target.closest('.opt'); if(!b || b.disabled) return;
+    const item = b.closest('.q-item'); const i = +item.dataset.i, j = +b.dataset.j; const it = items[i];
+    const ok = j === it.correct;
+    $$('.opt', item).forEach((x,k) => { x.disabled = true; if(k===it.correct) x.classList.add('right'); });
+    if(!ok) b.classList.add('wrong');
+    const fb = $('.q-fb', item);
+    fb.className = 'q-fb show ' + (ok ? 'ok' : 'no');
+    fb.innerHTML = '<b>'+(ok ? 'Richtig. ' : 'Nicht ganz. ')+'</b>'+(it.explain||'');
+    given[i] = j; answered++; if(ok) correct++;
+    if(answered === items.length){
+      $('.q-summary', root).innerHTML = '<span class="score">'+correct+' von '+items.length+' richtig</span> <button class="btn ghost small q-retry" style="margin-left:6px">Nochmal (neu gemischt)</button>';
+      if(opts.onComplete) opts.onComplete(items, given, correct);
+      done(key);
+    }
+  };
+}
+
+function orderTask(id, steps, key, afterHTML){
+  const root = document.getElementById(id);
+  let cur; do { cur = shuffle(steps.map((_,i) => i)); } while(cur.every((v,i) => v===i));
+  const draw = (checked) => {
+    root.innerHTML = '<ol class="order-list">'+cur.map((s,pos) => {
+      const cls = checked ? (s===pos ? ' ok' : ' no') : '';
+      return '<li class="'+cls.trim()+'"><span class="pos">'+(pos+1)+'</span><span>'+steps[s]+'</span><span class="mv"><button data-p="'+pos+'" data-d="-1" aria-label="nach oben">↑</button><button data-p="'+pos+'" data-d="1" aria-label="nach unten">↓</button></span></li>';
+    }).join('')+'</ol><div class="btn-row"><button class="btn red" data-check>Reihenfolge prüfen</button><span class="ores"></span></div><div class="oafter"></div>';
+    if(checked){
+      const ok = cur.filter((s,p) => s===p).length;
+      $('.ores', root).innerHTML = '<span class="score">'+ok+' von '+steps.length+' an der richtigen Stelle</span>';
+      if(ok === steps.length){ $('.oafter', root).innerHTML = afterHTML || ''; done(key); }
+    }
+  };
+  root.onclick = e => {
+    const b = e.target.closest('[data-d]');
+    if(b){ const p = +b.dataset.p, q = p + (+b.dataset.d); if(q < 0 || q >= cur.length) return; [cur[p], cur[q]] = [cur[q], cur[p]]; draw(false); return; }
+    if(e.target.closest('[data-check]')) draw(true);
+  };
+  draw(false);
+}
+
+function gapText(id, parts, key, afterHTML){
+  const root = document.getElementById(id);
+  let html = '<p class="gap-text">', g = 0; const gaps = [];
+  parts.forEach(p => {
+    if(typeof p === 'string'){ html += p; return; }
+    gaps.push(p);
+    html += '<select data-g="'+g+'" aria-label="Lücke '+(g+1)+'"><option value="">…</option>'+shuffle(p.o.map((o,k) => ({o,k}))).map(x => '<option value="'+x.k+'">'+x.o+'</option>').join('')+'</select>';
+    g++;
+  });
+  html += '</p><div class="btn-row"><button class="btn red" data-check>Prüfen</button><button class="btn ghost small" data-solve>Lösung zeigen</button><span class="gres"></span></div><div class="gafter"></div>';
+  root.innerHTML = html;
+  const check = () => {
+    let ok = 0, empty = 0;
+    $$('select', root).forEach(s => { const gp = gaps[+s.dataset.g]; s.classList.remove('ok','no'); if(s.value===''){ empty++; return; } const good = +s.value === gp.c; s.classList.add(good ? 'ok' : 'no'); if(good) ok++; });
+    $('.gres', root).innerHTML = empty ? '<span class="small muted">Noch '+empty+' Lücke(n) offen.</span>' : '<span class="score">'+ok+' von '+gaps.length+' richtig</span>';
+    if(!empty){ $('.gafter', root).innerHTML = afterHTML || ''; done(key); }
+  };
+  root.onclick = e => {
+    if(e.target.closest('[data-check]')) check();
+    if(e.target.closest('[data-solve]')){ $$('select', root).forEach(s => s.value = String(gaps[+s.dataset.g].c)); check(); }
+  };
+}
+
+function calcRows(id, rows, key){
+  const root = document.getElementById(id); let checked = new Set();
+  root.innerHTML = '<div class="calc">'+rows.map((r,i) => '<div class="calc-row" data-i="'+i+'"><span class="small"><b>'+r.l+'</b></span><input inputmode="decimal" placeholder="'+(r.ph||'0')+'" aria-label="'+esc(r.l)+'"><button class="btn small">Prüfen</button><div class="res"></div></div>').join('')+'</div>';
+  root.onclick = e => {
+    const b = e.target.closest('.calc-row .btn'); if(!b) return;
+    const row = b.closest('.calc-row'), r = rows[+row.dataset.i];
+    const v = parseNum($('input', row).value); if(isNaN(v)) return;
+    const ok = Math.abs(v - r.v) <= r.tol;
+    checked.add(+row.dataset.i); row.classList.add('done');
+    const res = $('.res', row); res.style.background = ok ? 'var(--green-soft)' : 'var(--red-soft)';
+    res.innerHTML = (ok ? '✓ Richtig: ' : '✗ Richtig wäre: ') + '<b>' + r.show + '</b><br>' + r.ex;
+    if(checked.size === rows.length) done(key);
+  };
+}
+
+/* =========================================================
+   K0 – Aldi Süd
+   ========================================================= */
+quizList('m1', [
+  { q:'Wie hat sich Aldi Süd mit „Nur Nur Natur“ verändert?', options:['Vom reinen Preisdiscounter zum nachhaltigkeitsorientierten Anbieter','Vom Bio-Fachhändler zum Discounter','Vom Supermarkt zum reinen Onlinehändler','Gar nicht, es gibt nur neue Verpackungen'], correct:0, explain:'Aldi Süd reagiert auf die steigende Nachfrage nach umweltfreundlichen, natürlichen und hochwertigen Lebensmitteln und entwickelt sich zum nachhaltigkeitsorientierten Anbieter.' },
+  { q:'Wie lautet das neue Marketingversprechen?', options:['Luxus-Bio für Kenner mit großem Budget','Nachhaltige, hochwertige Bio-Produkte für alle erschwinglich machen','Die billigsten Lebensmittel, egal wie sie produziert werden','Ausschließlich regionale Produkte aus Süddeutschland'], correct:1, explain:'„Nur Nur Natur“ steht für Natürlichkeit, Nachhaltigkeit, Transparenz und ein gutes Preis-Leistungs-Verhältnis.' },
+  { q:'Wie schafft Aldi Süd es, Bio-Produkte günstiger anzubieten als die Konkurrenz?', options:['Durch staatliche Subventionen','Durch geringere Qualitätsstandards','Durch Skaleneffekte: Große Mengen senken die Kosten pro Stück','Durch den Verzicht auf jede Werbung'], correct:2, explain:'Als großer Discounter kauft und verkauft Aldi Süd riesige Mengen. Die Stückkosten sinken, und das ermöglicht eine aggressive Preisstrategie.' },
+  { q:'Welche Veränderung im Konsumverhalten nutzt Aldi Süd?', options:['Kunden achten nur noch auf den Preis','Die Nachfrage nach Bio-Produkten sinkt','Nachhaltigkeit wird alltagstauglich und gilt nicht mehr als Luxus; das Gesundheitsbewusstsein steigt','Kunden kaufen Lebensmittel nur noch online'], correct:2, explain:'Verbraucherinnen und Verbraucher erwarten immer häufiger nachhaltige Produkte zu erschwinglichen Preisen.' },
+  { q:'Warum ist „Nur Nur Natur“ mehr als eine neue Produktlinie?', options:['Weil die Marke nur für ein Jahr geplant ist','Weil es eine langfristige Entscheidung über Positionierung, Lieferketten und Wettbewerb ist','Weil die Produkte teurer sind als alle anderen','Weil es eine einmalige Rabattaktion ist'], correct:1, explain:'Es ist eine <b>strategische</b> Entscheidung mit langfristigen Auswirkungen, die den ganzen Bio-Markt verändern könnte. Um diesen Unterschied zwischen Strategie und Umsetzung geht es in Kapitel 1.' }
+], 'm1');
+
+/* =========================================================
+   K1
+   ========================================================= */
+gapText('fahrplan', [
+  'Marketingkonzeptionen ähneln einem ', {o:['Fahrplan','Kassenbon','Lexikon'], c:0},
+  '. Sie benennen die vom Unternehmen angestrebten ', {o:['Ziele','Instrumente','Strategien'], c:0},
+  ' („Wunschorte“), die auf dem Weg dorthin zu verfolgenden ', {o:['Strategien','Ziele','Instrumente'], c:0},
+  ' („Routen“) sowie die einzusetzenden ', {o:['Marketinginstrumente','Unternehmensziele','Wettbewerber'], c:0},
+  ' („Beförderungsmittel“). Aus den übergeordneten ', {o:['Unternehmenszielen','Werbespots','Produkten'], c:0},
+  ' werden speziellere Marketingziele abgeleitet. Gemeinsam bilden die ausgewählten Marketinginstrumente den ', {o:['Marketing-Mix','Marktanteil','Lebenszyklus'], c:0}, '.'
+], 'fahrplan');
+
+const KRIT = [
+  { k:'Zeitlicher Horizont', s:'ist langfristig und bestimmt die Zukunftsplanung und Ausrichtung des Unternehmens.', o:'ist kurz- bis mittelfristig und setzt Maßnahmen in eng definierten Zeitfenstern um.' },
+  { k:'Zielniveau', s:'formuliert übergeordnete, oft allgemein gehaltene Ziele (z. B. Marktposition stärken, Kundenzufriedenheit erhöhen).', o:'leitet daraus konkrete, messbare Maßnahmen ab (z. B. Kampagnen, Preisaktionen, Vertriebsaktivitäten).' },
+  { k:'Aufgaben / Fragestellungen', s:'entscheidet, welche Märkte bedient, welche Wettbewerbsvorteile angestrebt und welche Zielgruppen priorisiert werden.', o:'beschäftigt sich mit Produkt-, Preis-, Vertriebs- und Kommunikationspolitik (Marketing-Mix).' },
+  { k:'Funktion im Unternehmen', s:'koordiniert und gibt allen Abteilungen Orientierung, damit Entscheidungen nicht chaotisch getroffen werden.', o:'realisiert die Strategie in der Praxis durch konkrete Aktivitäten und verfolgt kurzfristige Ziele.' }
+];
+quizList('kriterien', shuffle(KRIT.flatMap(k => [
+  { q:'<span class="pill">'+k.k+'</span> Diese Marketingebene … '+k.s, correct:0, explain:'Das beschreibt das <b>strategische</b> Marketing.' },
+  { q:'<span class="pill">'+k.k+'</span> Diese Marketingebene … '+k.o, correct:1, explain:'Das beschreibt das <b>operative</b> Marketing.' }
+])), 'kriterien', { options:['Strategisches Marketing','Operatives Marketing'], onComplete: () => {
+  $('#kritTable').innerHTML = '<h4 style="margin-top:18px">Deine Abgrenzungstabelle</h4><table><tr><th>Kriterium</th><th>Strategisches Marketing …</th><th>Operatives Marketing …</th></tr>'+KRIT.map(k => '<tr><td><b>'+k.k+'</b></td><td>'+k.s+'</td><td>'+k.o+'</td></tr>').join('')+'</table>';
+}, onReset: () => { $('#kritTable').innerHTML = ''; } });
+
+quizList('aldi', shuffle([
+  { q:'Positionierung als nachhaltiger Discounter (Markenstrategie „Nur Nur Natur“)', correct:0, explain:'Langfristige Positionierungsentscheidung.' },
+  { q:'Einführung einer Produktlinie mit 100 % natürlichen Zutaten', correct:1, explain:'Konkrete Sortimentsmaßnahme (Produktpolitik).' },
+  { q:'Festlegung der Markenidee und einer Nachhaltigkeitsleitlinie', correct:0, explain:'Grundsätzliche, langfristige Ausrichtung.' },
+  { q:'Verpackungsdesign und Produktkennzeichnung, z. B. Herkunftsangaben', correct:1, explain:'Konkrete Gestaltung (Produkt- und Kommunikationspolitik).' },
+  { q:'Entscheidung für die Zielgruppe der breiten, preisbewussten Nachhaltigkeitskäuferinnen und -käufer', correct:0, explain:'Zielgruppen- und Marktsegmententscheidung (Segmentierung).' },
+  { q:'Preisgestaltung einzelner Produkte, Aktionspreise, Einführungsangebote', correct:1, explain:'Konkrete Preispolitik.' },
+  { q:'Strategische Preisposition: aggressive Preisstrategie durch Skaleneffekte', correct:0, explain:'Grundsatzentscheidung über die Preisposition im Wettbewerb.' },
+  { q:'Regalplatzierung, Store-Displays und Online-Präsentation', correct:1, explain:'Maßnahmen am Point of Sale (Distributionspolitik).' },
+  { q:'Wettbewerbsstrategie: Druck auf Mitbewerber, langfristige Marktanteilsgewinne', correct:0, explain:'Langfristiges Wettbewerbsziel.' },
+  { q:'Anzeigen, Social-Media-Posts und Launch-Kampagne', correct:1, explain:'Kommunikationspolitik.' },
+  { q:'Langfristige Ausrichtung von Lieferketten und Produktion auf Nachhaltigkeit', correct:0, explain:'Langfristige Grundsatzentscheidung.' },
+  { q:'Auswahl konkreter Lieferanten, Produktion mit umweltfreundlichen Prozessen', correct:1, explain:'Konkrete Umsetzung im Tagesgeschäft.' }
+]), 'aldi', { options:['Strategisch','Operativ'] });
+
+orderTask('prozess', [
+  '<b>Unternehmensziele festlegen:</b> Wohin soll sich das Unternehmen entwickeln?',
+  '<b>Marktforschung:</b> Daten über Markt, Kunden und Wettbewerber gewinnen',
+  '<b>Marktanalyse:</b> Daten auswerten, Prognosen ableiten',
+  '<b>SWOT- und Portfolioanalyse:</b> eigene Position und Angebot bewerten',
+  '<b>Marketingziele ableiten:</b> Was soll das Marketing beitragen?',
+  '<b>Marketingstrategien festlegen:</b> Segmentierung, Positionierung, Wachstum',
+  '<b>Operatives Marketing:</b> Marketing-Mix umsetzen (Produkt, Preis, Distribution, Kommunikation)',
+  '<b>Marketingcontrolling:</b> Betriebserfolg, Werbeerfolg und Deckungsbeiträge kontrollieren'
+], 'prozess', '<div class="box merke" style="margin-bottom:0"><strong>Richtig!</strong>Strategisches Marketing umfasst alles bis zur Festlegung der Strategien, danach setzt das operative Marketing um. Das Controlling schließt den Kreis: Seine Ergebnisse fließen in die nächste Planung ein. Strategisches Marketing ist also ein <b>Kreislauf</b>.</div>');
+
+/* =========================================================
+   K2 – Marktforschung
+   ========================================================= */
+quizList('primsek', shuffle([
+  { q:'Online-Umfrage unter 500 Kundinnen und Kunden zu einem geplanten Produkt', correct:0, explain:'Eigene Datenerhebung für genau diese Frage: Primärforschung (Befragung).' },
+  { q:'Auswertung von Daten des Statistischen Bundesamts zur Bevölkerungsentwicklung', correct:1, explain:'Vorhandene Daten, die für andere Zwecke erhoben wurden.' },
+  { q:'Gruppendiskussion mit Jugendlichen über ein neues Design', correct:0, explain:'Eigene, qualitative Erhebung.' },
+  { q:'Auswertung der eigenen Umsatzstatistik nach Regionen', correct:1, explain:'Die Daten liegen schon vor (erhoben für die Buchhaltung): Sekundärforschung aus einer internen Quelle.' },
+  { q:'Beobachtung, wie Kunden sich vor einem Regal verhalten', correct:0, explain:'Eigene Erhebung durch Beobachtung.' },
+  { q:'Kauf einer Studie eines Branchenverbands', correct:1, explain:'Fremde, bereits vorhandene Daten.' },
+  { q:'Testmarkt: Ein Produkt wird probeweise nur in einer Stadt verkauft', correct:0, explain:'Experiment unter realen Bedingungen.' },
+  { q:'MOVE Motion wertet die Sinus-Studie über Werte und Lebenswelten aus', correct:1, explain:'Laut Erwartungshorizont typisches <b>desk research</b>.' },
+  { q:'Telefoninterviews mit Fahrradhändlern über ihre Erwartungen', correct:0, explain:'Eigene Befragung.' }
+]), 'primsek', { options:['Primär (field research)','Sekundär (desk research)'] });
+
+quizList('intext', shuffle([
+  { q:'Umsatzzahlen der eigenen Filialen', correct:0, explain:'Unternehmensinterne Daten.' },
+  { q:'Reklamationsstatistik der Kundenhotline', correct:0, explain:'Intern: Sie zeigt, wo Kunden unzufrieden sind.' },
+  { q:'Tracking-Daten aus dem eigenen Onlineshop', correct:0, explain:'Intern: Sie zeigen etwa, wie oft Kunden wiederkommen (MOVE Motion).' },
+  { q:'Marktanteile der Wettbewerber laut Branchenreport', correct:1, explain:'Externe Marktdaten über die Konkurrenz.' },
+  { q:'Umfrage eines Instituts zu Kaufgewohnheiten von Jugendlichen', correct:1, explain:'Externe Marktdaten über Nachfrager.' },
+  { q:'Neue EU-Verordnung zu Verpackungsmüll', correct:2, explain:'Externe Umweltdaten: rechtliche Rahmenbedingungen.' },
+  { q:'Prognose zur Inflationsrate im nächsten Jahr', correct:2, explain:'Externe Umweltdaten: wirtschaftliche Rahmenbedingungen.' },
+  { q:'Berichte der eigenen Außendienstmitarbeiter', correct:0, explain:'Interne Quelle.' }
+]), 'intext', { options:['Intern','Extern: Marktdaten','Extern: Umweltdaten'] });
+
+quizList('digital', shuffle([
+  { q:'Große Mengen digitaler Daten liefern zeitnahe und tiefe Einblicke.', correct:0, explain:'Chance: schnellere und genauere Entscheidungsgrundlagen.' },
+  { q:'Künstliche Intelligenz beschleunigt Auswertungen und erlaubt komplexere Prognosen.', correct:0, explain:'Chance.' },
+  { q:'Der Datenschutz begrenzt, welche Daten erhoben und genutzt werden dürfen.', correct:1, explain:'Herausforderung: rechtliche und ethische Anforderungen.' },
+  { q:'KI-Ergebnisse müssen auf Verzerrungen geprüft werden und nachvollziehbar sein.', correct:1, explain:'Herausforderung: Erklärbarkeit und Bias.' },
+  { q:'Riesige Datenmengen müssen gespeichert, gepflegt und ausgewertet werden.', correct:1, explain:'Herausforderung: Datenmanagement und Analysekompetenz.' },
+  { q:'Kürzere Produktlebenszyklen verlangen eine kontinuierliche, agile Marktforschung.', correct:1, explain:'Herausforderung: Einmalige Studien reichen nicht mehr.' }
+]), 'digital', { options:['Chance','Herausforderung'] });
+
+/* =========================================================
+   K3 – Marktanalyse
+   ========================================================= */
+quizList('bereiche', shuffle([
+  { q:'Welche Anforderungen hat die Zielgruppe? Was muss das Produkt leisten?', correct:0, explain:'Nachfrager im Markt.' },
+  { q:'Wie viel geben 14- bis 19-Jährige pro Jahr für Sportartikel aus?', correct:0, explain:'Nachfrager: Kaufkraft der Zielgruppe.' },
+  { q:'Welche Wettbewerber gibt es? Was sind ihre Stärken und Schwächen aus Kundensicht?', correct:1, explain:'Wettbewerber.' },
+  { q:'Mit welchen Preisen greifen die großen Anbieter an?', correct:1, explain:'Wettbewerber.' },
+  { q:'Welchen Absatz erzielen wir pro Jahr mit Produkt Y, und wie stark schwankt er?', correct:2, explain:'Situation des eigenen Unternehmens.' },
+  { q:'Wie hoch ist unser Marktanteil?', correct:2, explain:'Situation des eigenen Unternehmens.' },
+  { q:'Wie verändert eine neue EU-Vorschrift für E-Bike-Akkus den Markt?', correct:3, explain:'Globale Faktoren: rechtliche Rahmenbedingungen.' },
+  { q:'Welche Szenarien sind für die Marktentwicklung der nächsten 10 Jahre denkbar?', correct:3, explain:'Globale Faktoren und Zukunftsprognose.' }
+]), 'bereiche', { options:['Nachfrager','Wettbewerber','Eigenes Unternehmen','Globale Faktoren'] });
+
+calcRows('rechnen', [
+  { l:'Sättigungsgrad des Marktes (in %)', v:60, tol:0.5, show:'60 %', ex:'120.000 ÷ 200.000 × 100 = 60 %. Der Markt ist noch nicht gesättigt.' },
+  { l:'Ungenutztes Marktpotenzial (in Stück)', v:80000, tol:1, ph:'0', show:'80.000 Stück', ex:'200.000 − 120.000 = 80.000 E-Bikes könnten zusätzlich verkauft werden.' },
+  { l:'Marktanteil von VeloNova (in %)', v:15, tol:0.1, show:'15 %', ex:'18.000 ÷ 120.000 × 100 = 15 %.' },
+  { l:'Marktanteil des größten Konkurrenten (in %)', v:30, tol:0.1, show:'30 %', ex:'36.000 ÷ 120.000 × 100 = 30 %.' },
+  { l:'Relativer Marktanteil von VeloNova', v:0.5, tol:0.01, show:'0,5', ex:'15 % ÷ 30 % = 0,5. VeloNova ist halb so stark wie der Marktführer. Ein Wert unter 1 heißt: nicht Marktführer.' },
+  { l:'Marktwachstum gegenüber dem Vorjahr (in %)', v:20, tol:0.1, show:'20 %', ex:'(120.000 − 100.000) ÷ 100.000 × 100 = 20 %. Ein stark wachsender Markt. In der Portfolioanalyse wäre VeloNovas E-Bike-Sparte damit ein Question Mark (siehe Kapitel 5).' }
+], 'rechnen');
+
+/* =========================================================
+   K4 – SWOT
+   ========================================================= */
+const SWOT_L = ['Stärke','Schwäche','Chance','Risiko'];
+const SWOT_ITEMS = [
+  { q:'MOVE Motion ist ein junges Unternehmen: agil, kreativ und flexibel.', correct:0, explain:'Interne, positive Eigenschaft: Stärke.' },
+  { q:'Große Nähe zu den Kundinnen und Kunden', correct:0, explain:'Interne Stärke.' },
+  { q:'Es gibt nur ein einziges Bestseller-Produkt.', correct:1, explain:'Interne Schwäche: hohe Abhängigkeit.' },
+  { q:'Die Vertriebskanäle sind kaum ausgebaut.', correct:1, explain:'Interne Schwäche.' },
+  { q:'Es gibt zu wenig Personal.', correct:1, explain:'Interne Schwäche.' },
+  { q:'Die Digitalisierung (Onlinehandel, Social Media) schreitet voran.', correct:2, explain:'Externe Entwicklung, die MOVE Motion nutzen kann: Chance.' },
+  { q:'Mit Samira Spitz steht eine Promi-Influencerin für eine Kooperation bereit.', correct:2, explain:'Laut Erwartungshorizont eine Chance aus dem Marktumfeld.' },
+  { q:'Globalisierung: Anbieter aus aller Welt drängen auf den Markt.', correct:3, explain:'Externe Bedrohung: Risiko.' },
+  { q:'„Big Player“ unterbieten mit Kampfpreisen.', correct:3, explain:'Externes Risiko, kein interner Fehler von MOVE Motion. Typische Verwechslung mit „Schwäche“!' }
+];
+quizList('swotsort', shuffle(SWOT_ITEMS), 'swotsort', { options:SWOT_L, onComplete: () => {
+  const cell = (k, cls, title) => '<div class="cell '+cls+'"><h5>'+title+'</h5><ul>'+SWOT_ITEMS.filter(i => i.correct===k).map(i => '<li>'+i.q+'</li>').join('')+'</ul></div>';
+  $('#swotGrid').innerHTML = '<h4 style="margin-top:18px">SWOT-Matrix MOVE Motion</h4><div class="swot"><div></div><div class="hd">hilfreich (+)</div><div class="hd">hinderlich (−)</div><div class="hd">intern</div>'+cell(0,'c-s','Stärken')+cell(1,'c-w','Schwächen')+'<div class="hd">extern</div>'+cell(2,'c-o','Chancen')+cell(3,'c-t','Risiken')+'</div>';
+}, onReset: () => { $('#swotGrid').innerHTML = ''; } });
+
+quizList('swotstrat', shuffle([
+  { q:'MOVE Motion nutzt seine Agilität, um gemeinsam mit der Influencerin schnell digitale Kampagnen zu starten.', correct:0, explain:'Stärke (Agilität) + Chance (Influencerin, Digitalisierung) = <b>SO: Ausbauen</b>.' },
+  { q:'Die kaum ausgebauten Vertriebskanäle werden durch einen eigenen Onlineshop ausgeglichen.', correct:1, explain:'Schwäche (Vertrieb) wird mithilfe einer Chance (Digitalisierung) kompensiert: <b>WO: Aufholen</b>.' },
+  { q:'Statt sich auf einen Preiskampf mit den Big Playern einzulassen, setzt MOVE Motion auf seine Kundennähe und persönlichen Service.', correct:2, explain:'Stärke (Kundennähe) wehrt Risiko (Kampfpreise) ab: <b>ST: Absichern</b>.' },
+  { q:'MOVE Motion verringert die Abhängigkeit von seinem einzigen Bestseller, bevor Billiganbieter ihn kopieren und unterbieten.', correct:3, explain:'Schwäche (nur ein Bestseller) trifft auf Risiko (Kampfpreise): <b>WT: Vermeiden</b>, also Schadensbegrenzung.' },
+  { q:'Aldi Süd nutzt seine Einkaufsmacht, um die wachsende Nachfrage nach günstigem Bio zu bedienen.', correct:0, explain:'Stärke (Skaleneffekte) + Chance (Nachhaltigkeitstrend) = <b>SO</b>.' },
+  { q:'Ein Hersteller mit veralteter Technik schließt sich angesichts strengerer EU-Auflagen mit einem Partner zusammen, statt allein zu investieren.', correct:3, explain:'Schwäche + Risiko: <b>WT</b>. Ziel ist, den Schaden zu begrenzen.' }
+]), 'swotstrat', { options:['SO: Ausbauen','WO: Aufholen','ST: Absichern','WT: Vermeiden'] });
+
+(function(){
+  const root = $('#swotown'); const T = S.data.txt;
+  const f = (id, label, cls, ph) => '<label class="'+cls+'">'+label+'<textarea id="'+id+'" rows="4" placeholder="'+ph+'">'+esc(T[id]||'')+'</textarea></label>';
+  root.innerHTML = '<label class="small"><b>Unternehmen:</b> <input class="inline-in" style="width:240px" id="so_name" value="'+esc(T.so_name||'')+'" placeholder="z. B. Aldi Süd"></label>' +
+    '<div class="swot-edit" style="margin-top:10px">'+f('so_s','Stärken (intern +)','c-s','z. B. Einkaufsmacht')+f('so_w','Schwächen (intern −)','c-w','z. B. Image als Billiganbieter')+f('so_o','Chancen (extern +)','c-o','z. B. Nachhaltigkeitstrend')+f('so_t','Risiken (extern −)','c-t','z. B. Preiskampf')+'</div>' +
+    '<label class="small" style="display:block;margin-top:10px"><b>Abgeleitete Strategien</b> (nenne jeweils die Kombination, z. B. SO oder WT):<textarea id="so_str" rows="3" style="width:100%;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);margin-top:4px">'+esc(T.so_str||'')+'</textarea></label>' +
+    '<div class="btn-row"><button class="btn red" id="soPrint">SWOT drucken / als PDF</button></div>';
+  root.addEventListener('input', e => {
+    if(!e.target.id) return; T[e.target.id] = e.target.value; S.save();
+    const filled = ['so_s','so_w','so_o','so_t','so_str'].filter(k => (T[k]||'').trim()).length; if(filled >= 4) done('swotown');
+  });
+  $('#soPrint').onclick = () => {
+    const c = (k,t,bg) => '<td style="border:1px solid #999;padding:10px;vertical-align:top;width:50%;background:'+bg+'"><b>'+t+'</b><p style="white-space:pre-wrap;margin:6px 0 0">'+esc(T[k]||'')+'</p></td>';
+    printHTML('SWOT-Analyse: '+(T.so_name||'________'), '<p><b>Name:</b> ________________</p><table style="width:100%;border-collapse:collapse;font-size:11pt"><tr>'+c('so_s','Stärken','#e8f5e9')+c('so_w','Schwächen','#fdecea')+'</tr><tr>'+c('so_o','Chancen','#e0f2f1')+c('so_t','Risiken','#fff8e1')+'</tr></table><p style="margin-top:14px"><b>Abgeleitete Strategien:</b></p><p style="white-space:pre-wrap;border:1px solid #ccc;padding:10px;min-height:80px">'+esc(T.so_str||'')+'</p>');
+  };
+})();
+
+/* =========================================================
+   K5 – Portfolio
+   ========================================================= */
+const CAT = ['Question Mark','Star','Cash Cow','Poor Dog'];
+quizList('normstrat', shuffle([
+  { q:'Ein Produkt hat einen hohen relativen Marktanteil auf einem stark wachsenden Markt.', options:CAT, correct:1, explain:'Star: überdurchschnittlich profitabel, deshalb weiter investieren (Ziel: Wachstum).' },
+  { q:'Ein Produkt ist Marktführer, der Markt stagniert aber.', options:CAT, correct:2, explain:'Cash Cow: Bringt hohe Gewinne, braucht wenig Investitionen.' },
+  { q:'Ein neues Produkt auf einem boomenden Markt hat erst einen kleinen Marktanteil.', options:CAT, correct:0, explain:'Question Mark: Es ist offen, ob daraus ein Star wird.' },
+  { q:'Ein Produkt hat einen kleinen Marktanteil auf einem schrumpfenden Markt.', options:CAT, correct:3, explain:'Poor Dog.' },
+  { q:'Welche Normstrategie gilt für <b>Stars</b>?', options:['Abschöpfen','Weiter investieren (Wachstum)','Sofort desinvestieren','Nichts tun'], correct:1, explain:'In Star-Märkte sollte weiter investiert werden, um die Position zu halten.' },
+  { q:'Welche Normstrategie gilt für <b>Cash Cows</b>?', options:['Stark investieren','Abschöpfen: Gewinne in Stars und Question Marks stecken','Sofort aufgeben','Preise drastisch senken'], correct:1, explain:'Die Rendite sollte in die längerfristig rentablen Stars oder Question Marks fließen.' },
+  { q:'Welche Normstrategie gilt für <b>Question Marks</b>?', options:['Abschöpfen','Entweder investieren, um den Marktanteil deutlich zu steigern, oder aussteigen','Immer sofort aufgeben','Nur die Preise erhöhen'], correct:1, explain:'Entscheidung nötig: Wachstum oder Desinvestition.' },
+  { q:'Welche Normstrategie gilt für <b>Poor Dogs</b>?', options:['Weiter investieren','Eher früher als später zurückziehen','Abschöpfen und ausbauen','Zur Hauptmarke machen'], correct:1, explain:'Desinvestition, sofern nicht besondere Gründe (z. B. Sortimentsvollständigkeit) dagegen sprechen.' }
+]), 'normstrat');
+
+(function(){
+  const root = $('#bcg');
+  const P = [
+    { n:'Bio-Eistee', own:24, comp:15, g:18, c:1 },
+    { n:'Energy-Shot', own:6, comp:20, g:22, c:0 },
+    { n:'Mineralwasser Classic', own:21, comp:10, g:2, c:2 },
+    { n:'Malzbier', own:8, comp:20, g:-3, c:3 },
+    { n:'Hafer-Drink', own:9, comp:15, g:15, c:0 },
+    { n:'Apfelschorle', own:26, comp:20, g:4, c:2 }
+  ];
+  P.forEach(p => p.rma = Math.round(p.own/p.comp*10)/10);
+  root.innerHTML = '<table class="bcg-table"><thead><tr><th>Produkt</th><th>eigener Marktanteil</th><th>Marktanteil größter Konkurrent</th><th>Markt&shy;wachstum</th><th>relativer Marktanteil</th><th>Kategorie</th></tr></thead><tbody>' +
+    P.map((p,i) => '<tr data-i="'+i+'"><td><b>'+p.n+'</b></td><td>'+p.own+' %</td><td>'+p.comp+' %</td><td>'+(p.g>0?'+':'')+p.g+' %</td><td><input inputmode="decimal" placeholder="0,0" aria-label="Relativer Marktanteil '+p.n+'"></td><td><select aria-label="Kategorie '+p.n+'"><option value="">–</option>'+CAT.map((c,k) => '<option value="'+k+'">'+c+'</option>').join('')+'</select><div class="fb"></div></td></tr>').join('') +
+    '</tbody></table><div class="btn-row"><button class="btn red" id="bcgCheck">Prüfen &amp; Portfolio zeichnen</button><span id="bcgRes"></span></div><div id="bcgPlot"></div>';
+  $('#bcgCheck').onclick = () => {
+    let ok = 0, empty = 0;
+    P.forEach((p,i) => {
+      const tr = $('tr[data-i="'+i+'"]', root), inp = $('input', tr), sel = $('select', tr), fb = $('.fb', tr);
+      const v = parseNum(inp.value);
+      if(isNaN(v) || sel.value === ''){ empty++; fb.textContent = ''; return; }
+      const r1 = Math.abs(v - p.rma) <= 0.051, r2 = +sel.value === p.c;
+      inp.style.borderColor = r1 ? 'var(--green)' : 'var(--red)'; sel.style.borderColor = r2 ? 'var(--green)' : 'var(--red)';
+      fb.innerHTML = (r1 ? '' : 'RMA: '+fmt(p.rma,1)+'. ') + (r2 ? '✓' : '→ '+CAT[p.c]);
+      if(r1 && r2) ok++;
+    });
+    if(empty){ $('#bcgRes').innerHTML = '<span class="small muted">Bitte alle Zeilen ausfüllen.</span>'; return; }
+    $('#bcgRes').innerHTML = '<span class="score">'+ok+' von '+P.length+' vollständig richtig</span>';
+    drawPlot(); done('bcg');
+  };
+  function drawPlot(){
+    const W = 520, H = 360, L = 56, B = 44, T = 16, R = 16;
+    const x = v => L + (v/2.5)*(W-L-R), y = v => T + (1-(v+10)/40)*(H-T-B);
+    const cols = ['#E0A100','#2E7D32','#176B73','#D7261E'];
+    let s = '<svg class="plot" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Portfolio-Matrix FreshCo">';
+    s += '<rect x="'+L+'" y="'+T+'" width="'+(x(1)-L)+'" height="'+(y(10)-T)+'" fill="var(--yellow-soft)"/><rect x="'+x(1)+'" y="'+T+'" width="'+(W-R-x(1))+'" height="'+(y(10)-T)+'" fill="var(--green-soft)"/>';
+    s += '<rect x="'+L+'" y="'+y(10)+'" width="'+(x(1)-L)+'" height="'+(H-B-y(10))+'" fill="var(--red-soft)"/><rect x="'+x(1)+'" y="'+y(10)+'" width="'+(W-R-x(1))+'" height="'+(H-B-y(10))+'" fill="var(--teal-soft)"/>';
+    s += '<g font-family="Archivo,system-ui,sans-serif" font-weight="800" font-size="13" fill="var(--muted)"><text x="'+(L+8)+'" y="'+(T+18)+'">❓ Question Marks</text><text x="'+(W-R-8)+'" y="'+(T+18)+'" text-anchor="end">⭐ Stars</text><text x="'+(L+8)+'" y="'+(H-B-8)+'">🐕 Poor Dogs</text><text x="'+(W-R-8)+'" y="'+(H-B-8)+'" text-anchor="end">🐄 Cash Cows</text></g>';
+    s += '<line x1="'+x(1)+'" y1="'+T+'" x2="'+x(1)+'" y2="'+(H-B)+'" stroke="var(--ink)" stroke-dasharray="4 4"/><line x1="'+L+'" y1="'+y(10)+'" x2="'+(W-R)+'" y2="'+y(10)+'" stroke="var(--ink)" stroke-dasharray="4 4"/>';
+    s += '<line x1="'+L+'" y1="'+(H-B)+'" x2="'+(W-R)+'" y2="'+(H-B)+'" stroke="var(--ink)" stroke-width="2"/><line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+(H-B)+'" stroke="var(--ink)" stroke-width="2"/>';
+    s += '<g font-size="11" fill="var(--muted)" font-family="system-ui,sans-serif">'+[0,0.5,1,1.5,2,2.5].map(v => '<text x="'+x(v)+'" y="'+(H-B+16)+'" text-anchor="middle">'+fmt(v,1)+'</text>').join('')+[-10,-5,0,5,10,15,20,25,30].map(v => '<text x="'+(L-8)+'" y="'+(y(v)+4)+'" text-anchor="end">'+v+' %</text>').join('')+'</g>';
+    s += '<text x="'+((L+W-R)/2)+'" y="'+(H-6)+'" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)" font-family="system-ui,sans-serif">relativer Marktanteil</text><text x="14" y="'+((T+H-B)/2)+'" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)" font-family="system-ui,sans-serif" transform="rotate(-90 14 '+((T+H-B)/2)+')">Marktwachstum</text>';
+    P.forEach(p => { const r = 6 + p.own*0.45; s += '<circle cx="'+x(p.rma)+'" cy="'+y(p.g)+'" r="'+r+'" fill="'+cols[p.c]+'" opacity=".85" stroke="#fff" stroke-width="2"/><text x="'+x(p.rma)+'" y="'+(p.g>24 ? y(p.g)+r+14 : y(p.g)-r-4)+'" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink)" font-family="system-ui,sans-serif">'+p.n+'</text>'; });
+    s += '</svg>';
+    $('#bcgPlot').innerHTML = s + '<p class="small muted center">Die Kreisgröße entspricht dem eigenen Marktanteil.</p><div class="box merke" style="margin-bottom:0"><strong>Was heißt das für FreshCo?</strong>Mineralwasser und Apfelschorle sind <b>Cash Cows</b>. Ihre Gewinne sollte FreshCo in den <b>Star</b> Bio-Eistee und in ausgewählte <b>Question Marks</b> investieren. Bei Energy-Shot und Hafer-Drink muss FreshCo entscheiden: kräftig investieren oder aussteigen. Der Hafer-Drink liegt näher an der Grenze zum Star. Vom <b>Poor Dog</b> Malzbier sollte sich FreshCo eher früher als später trennen.</div>';
+  }
+})();
+
+quizList('moveport', [
+  { q:'<b>E-Bike Action Line:</b> neue Produktlinie im stark wachsenden E-Bike-Markt, in dem MOVE Motion bisher nur einen kleinen Marktanteil hat', options:CAT, correct:0, explain:'Question Mark (laut Erwartungshorizont).' },
+  { q:'<b>Motion-Style-Produkte:</b> neue Lifestyle-Linie in einem wachsenden Segment, Marktposition noch schwach', options:CAT, correct:0, explain:'Ebenfalls Question Mark.' },
+  { q:'<b>Trinkflaschen:</b> etabliertes Produkt mit starker Stellung in einem kaum noch wachsenden Markt', options:CAT, correct:2, explain:'Cash Cow.' },
+  { q:'<b>Kinderräder:</b> starke Marktposition, gesättigter Markt', options:CAT, correct:2, explain:'Cash Cow.' },
+  { q:'Was sollte MOVE Motion laut Normstrategie mit den Gewinnen aus Trinkflaschen und Kinderrädern tun?', options:['Als Dividende ausschütten und nichts weiter tun','Gezielt in die Question Marks investieren, um sie zu Stars zu machen','In neue Trinkflaschen-Farben stecken','In Kampfpreise gegen die Big Player investieren'], correct:1, explain:'Abschöpfen und umschichten: Die Cash Cows finanzieren die Zukunft. Weil MOVE Motion wenig Personal hat, sollte es sich aber auf die aussichtsreichere Question Mark konzentrieren.' }
+], 'moveport');
+
+/* =========================================================
+   K6 – Strategien
+   ========================================================= */
+quizList('ziele', shuffle([
+  { q:'Den Umsatz im nächsten Geschäftsjahr um 10 % steigern', correct:0, explain:'In Geld messbar: ökonomisch.' },
+  { q:'Den Bekanntheitsgrad bei 14- bis 19-Jährigen in zwei Jahren auf 50 % erhöhen', correct:1, explain:'Bezieht sich auf das Wissen der Zielgruppe: psychografisch (messbar per Umfrage).' },
+  { q:'Den Marktanteil von 15 % auf 20 % ausbauen', correct:0, explain:'Ökonomisch.' },
+  { q:'Als nachhaltige Marke wahrgenommen werden (Image)', correct:1, explain:'Psychografisch.' },
+  { q:'Den Anteil zufriedener Kunden in zwei Jahren von 60 % auf 80 % erhöhen', correct:1, explain:'Kundenzufriedenheit ist ein psychografisches Ziel, hier vorbildlich präzise formuliert.' },
+  { q:'Den Absatz der Trinkflaschen auf 50.000 Stück pro Jahr steigern', correct:0, explain:'Mengenziel: ökonomisch.' },
+  { q:'Den Gewinn je verkauftem E-Bike erhöhen', correct:0, explain:'Ökonomisch.' }
+]), 'ziele', { options:['Ökonomisches Ziel','Psychografisches Ziel'] });
+
+quizList('segment', shuffle([
+  { q:'Jugendliche zwischen 14 und 19 Jahren', correct:1, explain:'Alter ist ein demografisches Merkmal.' },
+  { q:'Kundinnen und Kunden in Großstädten', correct:0, explain:'Geografisch.' },
+  { q:'Menschen, denen Nachhaltigkeit und Natur wichtig sind (vgl. Sinus-Studie)', correct:2, explain:'Werte und Einstellungen: psychografisch.' },
+  { q:'Outdoor-Fans mit aktivem Lebensstil', correct:2, explain:'Lebensstil: psychografisch.' },
+  { q:'Stammkunden, die mehrmals im Monat im Onlineshop bestellen', correct:3, explain:'Kaufhäufigkeit: verhaltensbezogen.' },
+  { q:'Schnäppchenjäger, die nur bei Aktionen kaufen', correct:3, explain:'Preisverhalten: verhaltensbezogen.' },
+  { q:'Haushalte mit hohem Einkommen', correct:1, explain:'Einkommen gehört zu den demografischen (sozioökonomischen) Merkmalen.' },
+  { q:'Kundinnen und Kunden in Skandinavien', correct:0, explain:'Geografisch.' }
+]), 'segment', { options:['Geografisch','Demografisch','Psychografisch','Verhaltensbezogen'] });
+
+(function(){
+  const Q = ['günstig · sehr nachhaltig','günstig · wenig nachhaltig','teuer · sehr nachhaltig','teuer · wenig nachhaltig'];
+  const ITEMS = [
+    { q:'Bio-Supermarkt mit Vollsortiment', correct:2, pos:[0.78,0.82], explain:'Hohe Nachhaltigkeit, hohe Preise: lange die klassische Bio-Position.' },
+    { q:'Discount-Standardsortiment', correct:1, pos:[0.2,0.2], explain:'Günstig, aber Nachhaltigkeit steht nicht im Vordergrund.' },
+    { q:'Aldi Süd „Nur Nur Natur“', correct:0, pos:[0.24,0.8], explain:'Genau diese Position will Aldi Süd besetzen: nachhaltig <b>und</b> erschwinglich.' },
+    { q:'Exklusive Feinkostmarke mit eingeflogenen Spezialitäten', correct:3, pos:[0.82,0.24], explain:'Teuer, aber wegen Luftfracht wenig nachhaltig.' }
+  ];
+  quizList('posmap', ITEMS, 'posmap', { options:Q, onComplete: () => {
+    const W = 440, H = 300, x = v => 40 + v*(W-60), y = v => 20 + (1-v)*(H-60);
+    let s = '<svg class="plot" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Positionierungskreuz">';
+    s += '<line x1="'+x(0)+'" y1="'+y(0.5)+'" x2="'+x(1)+'" y2="'+y(0.5)+'" stroke="var(--ink)" stroke-width="2"/><line x1="'+x(0.5)+'" y1="'+y(0)+'" x2="'+x(0.5)+'" y2="'+y(1)+'" stroke="var(--ink)" stroke-width="2"/>';
+    s += '<g font-size="11" font-weight="700" fill="var(--muted)" font-family="system-ui,sans-serif"><text x="'+x(0)+'" y="'+(y(0.5)+16)+'">günstig</text><text x="'+x(1)+'" y="'+(y(0.5)+16)+'" text-anchor="end">teuer</text><text x="'+(x(0.5)+6)+'" y="'+(y(1)+4)+'">sehr nachhaltig</text><text x="'+(x(0.5)+6)+'" y="'+y(0)+'">wenig nachhaltig</text></g>';
+    ITEMS.forEach((it,i) => { const hl = i===2; s += '<circle cx="'+x(it.pos[0])+'" cy="'+y(it.pos[1])+'" r="'+(hl?13:9)+'" fill="'+(hl?'#D7261E':'#5D5866')+'"/><text x="'+x(it.pos[0])+'" y="'+(y(it.pos[1])+(hl?28:24))+'" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink)" font-family="system-ui,sans-serif">'+it.q.replace(/„|“/g,'').replace(' mit eingeflogenen Spezialitäten','').replace(' mit Vollsortiment','')+'</text>'; });
+    s += '</svg>';
+    $('#posmap').insertAdjacentHTML('beforeend', '<div id="posPlot">'+s+'<div class="box merke" style="margin-bottom:0"><strong>Positionierung</strong>Das Feld „günstig und sehr nachhaltig“ war bisher wenig besetzt. Aldi Süd positioniert „Nur Nur Natur“ genau dort, eine bewusste Abgrenzung von Bio-Supermärkten (teuer) und vom eigenen Standardsortiment. Edeka und Rewe haben zwar eigene Bio-Marken, Aldi Süd will sich aber über den Preis absetzen.</div></div>');
+  }, onReset: () => { const p = $('#posPlot'); if(p) p.remove(); } });
+})();
+
+quizList('ansoff', shuffle([
+  { q:'Ein Fahrradhersteller gewinnt mit Preisaktionen und mehr Werbung zusätzliche Kunden für seine bisherigen Räder im Inland.', correct:0, explain:'Bestehendes Produkt, bestehender Markt: Marktdurchdringung.' },
+  { q:'Derselbe Hersteller verkauft seine bisherigen Räder künftig auch in Skandinavien.', correct:1, explain:'Bestehendes Produkt, neuer Markt: Marktentwicklung.' },
+  { q:'Für seine Stammkundschaft bringt er erstmals ein E-Bike heraus.', correct:2, explain:'Neues Produkt, bestehender Markt: Produktentwicklung.' },
+  { q:'Er steigt in den Markt für Campingausrüstung ein.', correct:3, explain:'Neues Produkt, neuer Markt: Diversifikation, die riskanteste Strategie.' },
+  { q:'Aldi Süd bietet seiner Kundschaft mit „Nur Nur Natur“ eine neue Bio-Eigenmarke an.', correct:2, explain:'Neue Produkte für den bestehenden Markt: Produktentwicklung. Gleichzeitig will Aldi neue, nachhaltigkeitsorientierte Kunden gewinnen.' },
+  { q:'Ein Streamingdienst bietet sein bestehendes Abo zusätzlich in Indien an.', correct:1, explain:'Marktentwicklung.' }
+]), 'ansoff', { options:['Marktdurchdringung','Marktentwicklung','Produktentwicklung','Diversifikation'] });
+
+/* =========================================================
+   K7 – MOVE Motion
+   ========================================================= */
+quizList('movetools', shuffle([
+  { q:'Desk research: Die Sinus-Studie zeigt eine Werteveränderung. Der Outdoor- und Naturansatz zieht heute mehr denn je, Nachhaltigkeit ist wichtig.', correct:0, explain:'Sekundärforschung: Marktforschung.' },
+  { q:'Tracking im Onlineshop: Kundinnen und Kunden besuchen den Shop sehr häufig und kommen wieder.', correct:0, explain:'Datenerhebung über eigene Kunden: Marktforschung.' },
+  { q:'Die Kundinnen und Kunden sind „älteren Semesters“, die Werbung zielt aber auf ein Jugendimage.', correct:1, explain:'Auswertung der Daten zur Zielgruppe: Marktanalyse.' },
+  { q:'Junges Unternehmen (Agilität, Kreativität, Flexibilität) mit großer Nähe zu den Kunden', correct:2, explain:'Stärken: SWOT-Analyse.' },
+  { q:'Chance durch Digitalisierung und die Influencerin Samira Spitz; Risiko durch Kampfpreise der Big Player', correct:2, explain:'Chancen und Risiken: SWOT-Analyse.' },
+  { q:'E-Bike Action Line und Motion-Style-Produkte sind Question Marks.', correct:3, explain:'Portfolioanalyse.' },
+  { q:'Trinkflaschen und Kinderräder sind Cash Cows.', correct:3, explain:'Portfolioanalyse.' },
+  { q:'Nur ein Bestseller-Produkt, kaum ausgebaute Vertriebskanäle, zu wenig Personal', correct:2, explain:'Schwächen: SWOT-Analyse.' }
+]), 'movetools', { options:['Marktforschung','Marktanalyse','SWOT-Analyse','Portfolioanalyse'] });
+
+quizList('diagnose', [
+  { q:'Was war der Kernfehler von MOVE Motion?', options:['Die Werbespots waren zu kurz.','Neue Produktlinien und Kampagnen wurden ohne langfristige, datenbasierte Strategie gestartet.','Das Unternehmen hatte zu viele Vertriebskanäle.','Die Preise waren zu niedrig.'], correct:1, explain:'Operative Maßnahmen ohne strategisches Fundament: Es fehlte die Datengrundlage, um Ziele, Zielgruppe und Positionierung festzulegen.' },
+  { q:'Welcher Befund zeigt am deutlichsten, dass Zielgruppe und Kommunikation nicht zusammenpassten?', options:['Trinkflaschen sind Cash Cows.','Kunden besuchen den Onlineshop häufig.','Die Kundschaft ist eher älter, die Kampagne setzt aber auf ein Jugendimage.','Es gibt zu wenig Personal.'], correct:2, explain:'Die Werbung sprach Menschen an, die gar nicht die tatsächlichen Kunden sind. Eine Segmentierungs- und Positionierungsstrategie hätte das verhindert.' },
+  { q:'Welche Empfehlung passt am besten zu den Analyseergebnissen?', options:['Mit eigenen Kampfpreisen die Big Player unterbieten','Weiter wie bisher, nur mit mehr Werbebudget','Den häufig besuchten Onlineshop als Vertriebskanal ausbauen und die Kommunikation auf die tatsächliche, naturverbundene Kundschaft ausrichten','Alle Produkte bis auf den Bestseller einstellen'], correct:2, explain:'Das verbindet die Befunde: Die Schwäche Vertrieb wird mit der Chance Digitalisierung ausgeglichen (WO), Tracking und Sinus-Studie zeigen Kundschaft und Werte. Ein Preiskampf wäre für ein kleines Unternehmen mit wenig Personal riskant.' }
+], 'diagnose');
+
+gapText('suntzu', [
+  '„Wenn du deine ', {o:['Konkurrenz','Kunden','Mitarbeiter'], c:0}, ' kennst und dein ', {o:['eigenes Unternehmen','Werbebudget','Logo'], c:0},
+  ' kennst, kannst du erfolgreich am ', {o:['Markt','Aktienmarkt','Arbeitsplatz'], c:0}, ' bestehen. Wenn du dein eigenes Unternehmen kennst, doch nicht deine Konkurrenz, wirst du für jeden ',
+  {o:['Unternehmenserfolg','Kunden','Werbespot'], c:0}, ', den du erringst, eine Niederlage erleiden. Wenn du weder deine Konkurrenz noch dein eigenes Unternehmen kennst, wirst du auf dem Markt ', {o:['nicht bestehen','immer gewinnen','Marktführer'], c:0}, '.“'
+], 'suntzu', '<div class="box merke" style="margin-bottom:0"><strong>Deutung</strong>Es reicht nicht, nur das eigene Unternehmen oder nur die Wettbewerber zu kennen. Erst wer den Markt mit all seinen Chancen und Herausforderungen umfassend analysiert und die eigenen Stärken und Schwächen damit in Beziehung setzt, kann eine erfolgreiche Strategie entwickeln. <b>„Sich selbst kennen“</b>: Stärken und Schwächen (SWOT intern), Produktportfolio. <b>„Den Feind kennen“</b>: Wettbewerber in Marktforschung und Marktanalyse, Chancen und Risiken (SWOT extern).</div>');
+
+/* =========================================================
+   K8 – Abschluss
+   ========================================================= */
+gapText('tafel', [
+  '<b>Strategisches Marketing</b> = ', {o:['langfristig','kurzfristig','zufällig'], c:0}, ' orientierte, gesamthafte Marketingkonzeption eines Unternehmens. Grundlage sind Datenerhebungen mithilfe unterschiedlicher ', {o:['Analysetools','Werbespots','Rabattaktionen'], c:0}, '.<br>',
+  '<b>Die ', {o:['Marktforschung','Portfolioanalyse','SWOT-Analyse'], c:0}, '</b> gewinnt Informationen über einen bestimmten Markt systematisch, wertet sie aus, fasst sie zusammen und dokumentiert sie.<br>',
+  '<b>Die ', {o:['Marktanalyse','Marktforschung','Portfolioanalyse'], c:0}, '</b> analysiert Zahlen, Daten, Fakten und Beispiele aus der Marktforschung.<br>',
+  '<b>Die ', {o:['SWOT-Analyse','Marktanalyse','Portfolioanalyse'], c:0}, '</b> untersucht Stärken und Schwächen eines Unternehmens und identifiziert seine Chancen und Herausforderungen auf dem Markt.<br>',
+  '<b>Die ', {o:['Portfolioanalyse','SWOT-Analyse','Marktforschung'], c:0}, '</b> bewertet das Produkt- und Dienstleistungsangebot anhand der Kategorien Question Marks, Stars, ', {o:['Cash Cows','Golden Geese','Black Sheep'], c:0}, ' und Poor Dogs.<br>',
+  'Daraus wird eine ', {o:['Strategie','Werbeanzeige','Preisaktion'], c:0}, ' entwickelt. Sie ist die Grundlage für den ', {o:['Marketing-Mix','Jahresabschluss','Arbeitsvertrag'], c:0}, ' aus Produkt-, Preis-, ', {o:['Distributions','Personal','Steuer'], c:0}, '- und Kommunikationspolitik.'
+], 'tafel');
+
+const FINAL = [
+  { q:'Strategisches Marketing ist …', o:['eine kurzfristige Rabattaktion','eine langfristig orientierte, gesamthafte Marketingkonzeption','die Gestaltung von Werbeplakaten','ausschließlich die Preisgestaltung'], c:1, ex:'Es legt Ziele, Richtung, Prioritäten und Zielmärkte fest.' },
+  { q:'Wer erarbeitet die Marketingstrategie in der Regel?', o:['Die Werbeagentur','Das Verkaufspersonal','Die Unternehmensleitung bzw. das führende Management','Die Kundinnen und Kunden'], c:2, ex:'Die Strategie gibt allen Abteilungen Orientierung.' },
+  { q:'„Desk research“ bezeichnet …', o:['Primärmarktforschung','Sekundärmarktforschung','Bürogestaltung','die SWOT-Analyse'], c:1, ex:'Auswertung bereits vorhandener Daten.' },
+  { q:'Welche Aussage zur Marktanalyse trifft zu?', o:['Sie erhebt ausschließlich neue Daten durch Befragungen.','Sie wertet die Daten der Marktforschung aus und erlaubt Prognosen.','Sie bewertet nur das Produktportfolio.','Sie ersetzt die SWOT-Analyse.'], c:1, ex:'Die Marktanalyse baut auf der Marktforschung auf.' },
+  { q:'Ein neues Gesetz erschwert das Geschäftsmodell eines Unternehmens. In der SWOT-Analyse ist das …', o:['eine Schwäche','ein Risiko','eine Stärke','eine Chance'], c:1, ex:'Extern und nicht kontrollierbar: ein Risiko.' },
+  { q:'Die Kombination „Stärken nutzen, um Chancen zu ergreifen“ heißt …', o:['WT-Strategie','SO-Strategie (Ausbauen)','ST-Strategie','WO-Strategie'], c:1, ex:'Stärken werden erhöht oder kommen am Markt besser zur Geltung.' },
+  { q:'Ein Produkt mit niedrigem relativem Marktanteil auf einem stark wachsenden Markt ist ein …', o:['Star','Cash Cow','Question Mark','Poor Dog'], c:2, ex:'Investieren oder aussteigen?' },
+  { q:'Die Normstrategie für Cash Cows lautet …', o:['stark investieren','abschöpfen und Gewinne umschichten','sofort aufgeben','Preise verdoppeln'], c:1, ex:'Die Gewinne finanzieren Stars und Question Marks.' },
+  { q:'Eigener Marktanteil 12 %, größter Konkurrent 24 %. Der relative Marktanteil beträgt …', o:['2,0','0,5','12','36'], c:1, ex:'12 ÷ 24 = 0,5.' },
+  { q:'Neue Produkte auf neuen Märkten anbieten heißt …', o:['Marktdurchdringung','Marktentwicklung','Produktentwicklung','Diversifikation'], c:3, ex:'Die riskanteste der vier Wachstumsstrategien.' },
+  { q:'„Den Bekanntheitsgrad in zwei Jahren um 20 Prozentpunkte steigern“ ist ein …', o:['ökonomisches Ziel','psychografisches Ziel','operatives Instrument','Analysetool'], c:1, ex:'Es bezieht sich auf das Wissen der Zielgruppe.' },
+  { q:'Auf Unternehmen übertragen bedeutet Sun Tzus Zitat:', o:['Werbung ist wichtiger als Analyse.','Man muss vor allem die eigenen Produkte kennen.','Erfolgreich ist, wer Konkurrenz und Markt ebenso kennt wie das eigene Unternehmen.','Konkurrenz sollte man ignorieren.'], c:2, ex:'Genau das leisten die Analysetools des strategischen Marketings.' }
+];
+(function(){
+  const root = $('#final'); let i = 0, res = [];
+  const draw = () => {
+    if(i >= FINAL.length){
+      const ok = res.filter(Boolean).length;
+      root.innerHTML = '<div class="qs-progress">'+FINAL.map((_,k) => '<i class="'+(res[k]?'ok':'no')+'"></i>').join('')+'</div><div class="center"><div class="big-num">'+ok+' / '+FINAL.length+'</div><p>'+(ok>=11?'Hervorragend, du beherrschst das strategische Marketing!':ok>=8?'Gut gemacht! Schließe die letzten Lücken in den Kapiteln.':'Wiederhole die Kapitel 1–6 und versuche es noch einmal.')+'</p></div>' +
+        '<details><summary class="small"><b>Alle Antworten ansehen</b></summary>'+FINAL.map((f,k) => '<p class="small" style="margin:10px 0"><b>'+(k+1)+'. '+f.q+'</b><br>'+(res[k]?'✓':'✗')+' '+f.o[f.c]+'. '+f.ex+'</p>').join('')+'</details><div class="btn-row"><button class="btn ghost small" id="fqRe">Quiz wiederholen</button></div>';
+      $('#fqRe').onclick = () => { i = 0; res = []; draw(); };
+      done('final'); return;
+    }
+    const f = FINAL[i];
+    root.innerHTML = '<div class="qs-progress">'+FINAL.map((_,k) => '<i class="'+(k<i?(res[k]?'ok':'no'):(k===i?'cur':''))+'"></i>').join('')+'</div><p class="small muted">Frage '+(i+1)+' von '+FINAL.length+'</p><div class="q-text" style="font-size:1.1rem">'+f.q+'</div><div class="q-opts" style="flex-direction:column">'+f.o.map((o,j) => '<button class="opt" data-j="'+j+'">'+o+'</button>').join('')+'</div><div class="q-fb" id="fqFb"></div>';
+    $$('.opt', root).forEach(b => b.onclick = () => {
+      const j = +b.dataset.j, ok = j === f.c; res[i] = ok;
+      $$('.opt', root).forEach((x,k) => { x.disabled = true; if(k===f.c) x.classList.add('right'); });
+      if(!ok) b.classList.add('wrong');
+      const fb = $('#fqFb'); fb.className = 'q-fb show '+(ok?'ok':'no'); fb.innerHTML = '<b>'+(ok?'Richtig. ':'Nicht ganz. ')+'</b>'+f.ex+'<div class="btn-row"><button class="btn small" id="fqNext">'+(i===FINAL.length-1?'Ergebnis anzeigen':'Nächste Frage →')+'</button></div>';
+      $('#fqNext').onclick = () => { i++; draw(); };
+    });
+  };
+  draw();
+})();
+
+(function(){
+  const root = $('#ab'); const T = S.data.txt;
+  const TOOLS = [
+    { id:'mf', n:'Marktforschung', d:'Informationen über einen bestimmten Markt systematisch gewinnen, auswerten, entscheidungsgerecht zusammenfassen und dokumentieren. Datenquellen: interne und externe Quellen, Primär- und Sekundärmarktforschung. Durch die Digitalisierung gibt es neue Analysemethoden und große Datenmengen, aber auch Herausforderungen bei Datenmanagement und Datenschutz. KI beschleunigt die Auswertung, ihre Ergebnisse müssen aber stärker geprüft werden. Kürzere Produktlebenszyklen erfordern eine kontinuierliche, agile Marktforschung.', b:'Desk research: Die Sinus-Studie zeigt eine Werteveränderung. Der Outdoor- und Naturansatz zieht heute mehr denn je, Nachhaltigkeit ist wichtig. Tracking im Onlineshop: Kundinnen und Kunden besuchen den Shop sehr häufig und kommen wieder.' },
+    { id:'ma', n:'Marktanalyse', d:'Auf Basis der Daten der Marktforschung: Analyse von Zahlen, Daten, Fakten und Beispielen, um möglichst aktuelle, verlässliche, nachvollziehbare Informationen zu einer konkreten Fragestellung zu bekommen (z. B. Welche Wettbewerber gibt es, und wie hoch ist ihr Marktanteil? Wie hoch ist unser Marktanteil?).', b:'Die Kundinnen und Kunden sind „älteren Semesters“, während die Werbung auf das Jugendimage abzielt.' },
+    { id:'sw', n:'SWOT-Analyse', d:'Um die eigene Marktsituation zu bestimmen, werden die eigenen Stärken und Schwächen im Unternehmen analysiert und mit den marktgegebenen Chancen und Risiken in Beziehung gesetzt.', b:'Stärken: junges Unternehmen (Agilität, Kreativität, Flexibilität), Nähe zu den Kunden. Schwächen: nur ein Bestseller-Produkt, kaum ausgebaute Vertriebskanäle, zu wenig Personal. Chancen: Digitalisierung, Samira Spitz als Promi-Influencerin. Risiken: Globalisierung, Kampfpreise von „Big Playern“.' },
+    { id:'pa', n:'Portfolioanalyse', d:'Eine Untersuchungsmethode, mit der das gesamte Produkt- und Dienstleistungsangebot eines Unternehmens bewertet werden kann. Vergleicht man den Marktanteil mit dem Marktwachstum, lassen sich die Produkte in vier Segmente (Stars, Question Marks, Cash Cows, Poor Dogs) einteilen und spezifische Handlungsempfehlungen ableiten.', b:'Question Marks: E-Bike Action Line bzw. Motion-Style-Produkte. Cash Cows: Trinkflaschen und Kinderräder.' }
+  ];
+  const ta = (id, ph) => '<textarea id="'+id+'" rows="4" placeholder="'+ph+'">'+esc(T[id]||'')+'</textarea>';
+  root.innerHTML = '<div class="ws-grid">'+TOOLS.map(t => '<div class="ws-card"><h4>'+t.n+'</h4><label class="small"><b>Definition / Vorgehen / Ziele</b>'+ta('ab_'+t.id+'_d','In eigenen Worten …')+'</label><label class="small"><b>Beispiel MOVE Motion</b>'+ta('ab_'+t.id+'_b','Befund aus dem Film-Based-Training …')+'</label><button class="btn ghost small" data-sol="'+t.id+'" style="margin-top:8px">Erwartungshorizont zeigen</button><div class="sol" id="sol_'+t.id+'"><b>Definition / Vorgehen / Ziele:</b> '+t.d+'<br><br><b>Beispiel MOVE Motion:</b> '+t.b+'</div></div>').join('')+'</div>' +
+    '<div class="btn-row"><button class="btn red" id="abPrint">Arbeitsblatt drucken / als PDF</button><label class="small" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="abWithSol"> mit Erwartungshorizont</label></div>';
+  const chk = () => { const n = TOOLS.flatMap(t => ['ab_'+t.id+'_d','ab_'+t.id+'_b']).filter(k => (T[k]||'').trim()).length; if(n >= 4) done('ab'); };
+  root.addEventListener('input', e => { if(e.target.id && e.target.id.startsWith('ab_')){ T[e.target.id] = e.target.value; S.save(); chk(); } });
+  root.addEventListener('click', e => { const b = e.target.closest('[data-sol]'); if(b){ const s = $('#sol_'+b.dataset.sol); s.classList.toggle('show'); b.textContent = s.classList.contains('show') ? 'Erwartungshorizont ausblenden' : 'Erwartungshorizont zeigen'; } });
+  $('#abPrint').onclick = () => {
+    const ws = $('#abWithSol').checked;
+    const cell = v => '<td style="border:1px solid #999;padding:8px;vertical-align:top;white-space:pre-wrap;height:90px">'+esc(v||'')+'</td>';
+    printHTML('Arbeitsblatt: Analysetools des strategischen Marketings', '<p><b>Name:</b> ________________ &nbsp; <b>Datum:</b> ________</p><table style="width:100%;border-collapse:collapse;font-size:10.5pt"><tr><th style="border:1px solid #999;padding:6px;text-align:left;width:18%">Tool</th><th style="border:1px solid #999;padding:6px;text-align:left">Definition / Vorgehen / Ziele</th><th style="border:1px solid #999;padding:6px;text-align:left">Beispiel MOVE Motion</th></tr>' +
+      TOOLS.map(t => '<tr><td style="border:1px solid #999;padding:8px;vertical-align:top"><b>'+t.n+'</b></td>'+cell(T['ab_'+t.id+'_d'])+cell(T['ab_'+t.id+'_b'])+'</tr>' + (ws ? '<tr><td style="border:1px solid #999;padding:6px;font-size:9pt;color:#555">Erwartungs&shy;horizont</td><td style="border:1px solid #999;padding:6px;font-size:9pt;color:#555">'+t.d+'</td><td style="border:1px solid #999;padding:6px;font-size:9pt;color:#555">'+t.b+'</td></tr>' : '')).join('') +
+      '</table><p style="font-size:10pt;margin-top:14px"><b>Planungskette:</b> Strategische Analysen → Marketingziele → Marketingstrategien (Wachstum, Segmentierung, Positionierung) → Operatives Marketing (Marketing-Mix) → Marketingcontrolling</p>');
+  };
+  chk();
+})();
+
+/* ---------------- Start ---------------- */
+allIA.forEach(k => { if(S.data.done[k]){ const c = document.querySelector('[data-ia="'+k+'"]'); if(c) c.classList.add('is-done'); } });
+updateProgress();
+route();
+})();
+</script>
+</body></html>
